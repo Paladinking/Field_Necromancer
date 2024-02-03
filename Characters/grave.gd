@@ -49,10 +49,13 @@ func set_type(type : String = "zombie"):
 
 func spawn_character():
 	print("spawning thing from grave!")
+	if creature_to_spawn == null:
+		creature_to_spawn = preload("res://Characters/zombie.tscn")
+
 	if not creature_to_spawn == null:
 		var creature = creature_to_spawn.instantiate()
 		creature.process_mode = PROCESS_MODE_DISABLED
-		creature.position = Vector3(position.x, start_height, position.z)
+		creature.position = Vector3(global_position.x, start_height, global_position.z)
 		$CreatureHolder.add_child(creature)
 		target_height = start_height
 		velocity = -RAISE_VELOCITY
