@@ -1,4 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cag01vc8xhji0"]
+[gd_scene load_steps=6 format=3 uid="uid://cdvw0p45llw8x"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_ga0fh"]
+vertices = PackedVector3Array(-49.25, 0.3, -49.25, -49.25, 0.3, 49.5, 49.5, 0.3, 49.5, 49.5, 0.3, -49.25)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_kg43f"]
 
@@ -9,7 +13,8 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_ct4y7"]
 size = Vector3(10, 10, 10)
 
-[node name="World" type="Node3D"]
+[node name="World" type="NavigationRegion3D"]
+navigation_mesh = SubResource("NavigationMesh_ga0fh")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
@@ -54,11 +59,10 @@ size = Vector3(100, 10, 1)
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.2966, -3.9297)
+collision_layer = 0
+collision_mask = 0
 physics_material_override = SubResource("PhysicsMaterial_1fstk")
 constant_force = Vector3(10, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
 shape = SubResource("BoxShape3D_ct4y7")
-
-[node name="CSGBox3D" type="CSGBox3D" parent="RigidBody3D"]
-size = Vector3(10, 10, 10)
