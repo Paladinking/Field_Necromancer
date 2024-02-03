@@ -16,7 +16,7 @@ func has_target() -> bool:
 
 func find_target():
 	var potential_targets: Array[Node3D] = _detection.get_overlapping_bodies()
-	if not potential_targets:
+	if not potential_targets or potential_targets[0]._hp <= 0:
 		clear_target()
 	else:
 		var nearest: Node3D = potential_targets[0]
