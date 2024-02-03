@@ -11,7 +11,7 @@ var _target : Entity = self
 @onready var _detection: Area3D = $DetectionArea
 
 @export var dmg: int
-var _attack_cooldown : float = 0.0
+var _attack_cooldown : float = ATTACK_COOLDWON
 
 var rng : RandomNumberGenerator = RandomNumberGenerator.new()
 
@@ -147,13 +147,22 @@ func _physics_process(delta: float):
 				find_target()
 		if _target.position.distance_squared_to(_nav_agent.get_target_position()) > 2.0:
 			_nav_agent.set_target_position(_target.position)
-	
-	if _nav_agent.is_navigation_finished():
-		velocity.x = 0.0
-		velocity.z = 0.0
-	else:
+		if _nav_agent.is_navigation_finished():
+			velocity.x = 0.0
+			velocity.z = 0.0
+		else:
+			var next_path_position: Vector3 = _nav_agent.get_next_path_position()
+			velocity = global_position.direction_to(next_path_position) * SPEED
+	elif _attack_cooldown <= 0.0:
+		if _nav_agent.is_navigation_finished():
+			var len = rng.randf_range(3, 10)
+			var angle = rng.randf_range(0.0, 2 * PI)
+			_nav_agent.set_target_position(position + len * Vector3(sin(angle), 0.0, cos(angle)))
 		var next_path_position: Vector3 = _nav_agent.get_next_path_position()
-		velocity = global_position.direction_to(next_path_position) * SPEED
+		velocity = global_position.direction_to(next_path_position) * SPEED / 3
+	
+	
+		
 	_finalize_move(delta)
 	
 	
