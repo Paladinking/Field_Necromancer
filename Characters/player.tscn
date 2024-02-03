@@ -8,26 +8,28 @@
 albedo_color = Color(0.678431, 0.466667, 1, 1)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_t31kh"]
-height = 0.5
+height = 1.0
 radius = 2.0
 
 [node name="Player" type="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 collision_layer = 3
 script = ExtResource("1_daf4w")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_p7p8e")
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 material = SubResource("StandardMaterial3D_kj4gk")
 
 [node name="GraveDetectorArea" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 collision_layer = 0
 collision_mask = 8
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GraveDetectorArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.75, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 shape = SubResource("CylinderShape3D_t31kh")
 
 [connection signal="body_entered" from="GraveDetectorArea" to="." method="on_grave_detected"]

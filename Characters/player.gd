@@ -19,10 +19,6 @@ func _process(_delta):
 			if position.distance_squared_to(grave.position) < position.distance_squared_to(closest_grave.position):
 				closest_grave = grave
 		closest_grave.spawn_character()
-
-	var look_dir = Input.get_vector("look_left", "look_right", "look_up", "look_down")
-	var target = transform.basis * Vector3(look_dir.x, 0, look_dir.y) * MAX_LOOK_DISTANCE
-	camera_offset += (target - camera_offset) / 15
 	#camera_offset = camera_offset.clamp(target, target)
 
 
@@ -40,6 +36,10 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
+
+	var look_dir = Input.get_vector("look_left", "look_right", "look_up", "look_down")
+	var target = transform.basis * Vector3(look_dir.x, 0, look_dir.y) * MAX_LOOK_DISTANCE
+	camera_offset += (target - camera_offset) / 15
 
 
 func on_grave_detected(body: Node3D):
