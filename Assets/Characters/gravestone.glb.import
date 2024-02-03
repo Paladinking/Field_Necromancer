@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dgxb1hgsh2krh"
+uid="uid://b4cmgr1kiwakf"
 path="res://.godot/imported/gravestone.glb-26f279872f6d731b7977a9151aebb570.scn"
 
 [deps]
@@ -29,21 +29,6 @@ animation/fps=30
 animation/trimming=false
 animation/remove_immutable_tracks=true
 import_script/path=""
-_subresources={
-"nodes": {
-"PATH:Church_lofi": {
-"import/skip_import": true
-},
-"PATH:Hus_big_lofi": {
-"import/skip_import": true
-},
-"PATH:Hus_med_lofi": {
-"import/skip_import": true
-},
-"PATH:Hus_small_lofi": {
-"import/skip_import": true
-}
-}
-}
+_subresources={}
 gltf/naming_version=1
 gltf/embedded_image_handling=1

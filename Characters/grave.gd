@@ -12,7 +12,10 @@ var creature_to_spawn
 
 func _ready():
 	velocity = 0.0
-	start_height = position.y
+	if position.y == 0:
+		start_height = -5.0
+	else:
+		start_height = position.y
 
 
 func _physics_process(delta):
@@ -28,7 +31,8 @@ func _physics_process(delta):
 			if $CreatureHolder.get_child_count() > 0:
 				var child = $CreatureHolder.get_child(0)
 				child.process_mode = PROCESS_MODE_INHERIT
-				child.reparent(get_parent())
+				var parent = get_tree().get_nodes_in_group("Allies")[0]
+				child.reparent(parent)
 
 				queue_free()
 

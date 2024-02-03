@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://dt6ktmhcn2wdn"]
+
+[ext_resource type="PackedScene" uid="uid://cn1nj5nqnj6xr" path="res://Assets/Buildings/church_lofi.glb" id="1_38l1a"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7mttr"]
+size = Vector3(12, 4, 3.2)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_xb1c1"]
+points = PackedVector3Array(-5, 2.2, 0, -5, 0, -1.5, -5, 0, 1.5, 5, 2.2, 0, 5, 0, -1.5, 5, 0, 1.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_37piv"]
+size = Vector3(3, 3, 3)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_74yah"]
+points = PackedVector3Array(-1.5, 0, -1.5, 1.5, 0, -1.5, 1.5, 0, 1.5, -1.5, 0, 1.5, 0, 5, 0)
+
+[node name="Church" type="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 2, 0)
+shape = SubResource("BoxShape3D_7mttr")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 4, 0)
+shape = SubResource("ConvexPolygonShape3D_xb1c1")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.95, 6, 0)
+shape = SubResource("BoxShape3D_37piv")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.95, 7, 0)
+shape = SubResource("ConvexPolygonShape3D_74yah")
+
+[node name="church_lofi" parent="." instance=ExtResource("1_38l1a")]

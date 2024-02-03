@@ -14,7 +14,6 @@ radius = 2.0
 [node name="Player" type="CharacterBody3D"]
 collision_layer = 3
 script = ExtResource("1_daf4w")
-_hp = 100
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

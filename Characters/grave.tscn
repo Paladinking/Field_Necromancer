@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://7jfew48rxs6p"]
 
 [ext_resource type="Script" path="res://Characters/grave.gd" id="1_muvio"]
-[ext_resource type="PackedScene" uid="uid://dgxb1hgsh2krh" path="res://Assets/Characters/gravestone.glb" id="2_ti5qe"]
+[ext_resource type="PackedScene" uid="uid://b4cmgr1kiwakf" path="res://Assets/Characters/gravestone.glb" id="2_ti5qe"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_01f1k"]
 size = Vector3(1, 0.3, 1)

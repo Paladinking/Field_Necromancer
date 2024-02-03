@@ -1,0 +1,75 @@
+[gd_scene load_steps=5 format=3 uid="uid://bojiwbfto8b8f"]
+
+[ext_resource type="PackedScene" uid="uid://dt6ktmhcn2wdn" path="res://Buildings/church.tscn" id="1_cp6xr"]
+[ext_resource type="PackedScene" uid="uid://7jfew48rxs6p" path="res://Characters/grave.tscn" id="2_2u7ao"]
+[ext_resource type="PackedScene" uid="uid://da7futuxwh1lo" path="res://Buildings/wall.tscn" id="2_s5wms"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_rq1m1"]
+
+[node name="Graveyard" type="Node3D"]
+
+[node name="Floor" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+shape = SubResource("WorldBoundaryShape3D_rq1m1")
+
+[node name="Church" parent="." instance=ExtResource("1_cp6xr")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 19, 0, 1)
+
+[node name="Walls" type="Node3D" parent="."]
+
+[node name="Wall" parent="Walls" instance=ExtResource("2_s5wms")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -5.5)
+
+[node name="Wall2" parent="Walls" instance=ExtResource("2_s5wms")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 5.5)
+
+[node name="Wall3" parent="Walls" instance=ExtResource("2_s5wms")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -5.5)
+
+[node name="Wall4" parent="Walls" instance=ExtResource("2_s5wms")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 5.5)
+
+[node name="Wall5" parent="Walls" instance=ExtResource("2_s5wms")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5, 0, -5.5)
+
+[node name="Wall6" parent="Walls" instance=ExtResource("2_s5wms")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5, 0, 5.5)
+
+[node name="Graves" type="Node3D" parent="."]
+
+[node name="Grave" parent="Graves" instance=ExtResource("2_2u7ao")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11, 0, 6)
+
+[node name="Grave2" parent="Graves" instance=ExtResource("2_2u7ao")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11, 0, 3)
+
+[node name="Grave3" parent="Graves" instance=ExtResource("2_2u7ao")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11, 0, -3)
+
+[node name="Grave4" parent="Graves" instance=ExtResource("2_2u7ao")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11, 0, -6)
+
+[node name="Grave5" parent="Graves" instance=ExtResource("2_2u7ao")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2, 0, 6)
+
+[node name="Grave6" parent="Graves" instance=ExtResource("2_2u7ao")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2, 0, 3)
+
+[node name="Grave7" parent="Graves" instance=ExtResource("2_2u7ao")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2, 0, -3)
+
+[node name="Grave8" parent="Graves" instance=ExtResource("2_2u7ao")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2, 0, -6)
+
+[node name="Grave9" parent="Graves" instance=ExtResource("2_2u7ao")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7, 0, 6)
+
+[node name="Grave10" parent="Graves" instance=ExtResource("2_2u7ao")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7, 0, 3)
+
+[node name="Grave11" parent="Graves" instance=ExtResource("2_2u7ao")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7, 0, -3)
+
+[node name="Grave12" parent="Graves" instance=ExtResource("2_2u7ao")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7, 0, -6)
