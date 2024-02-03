@@ -16,7 +16,6 @@ size = Vector3(10, 2, 10)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_epts0"]
 
 [node name="World" type="NavigationRegion3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 navigation_mesh = SubResource("NavigationMesh_ga0fh")
 
 [node name="WorldBounds" type="StaticBody3D" parent="."]
