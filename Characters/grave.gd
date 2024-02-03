@@ -25,25 +25,26 @@ func _physics_process(delta):
 		if abs(position.y - target_height) < 0.1:
 			velocity = 0
 			position.y = target_height
-			print("done moving grave")
 
 			if $CreatureHolder.get_child_count() > 0:
 				var child = $CreatureHolder.get_child(0)
 				child.process_mode = PROCESS_MODE_INHERIT
 				child.reparent(get_parent())
-				print("finished spawning thing")
+
+				queue_free()
 
 
 func raise(ground_height : float = 0.0):
 	velocity = RAISE_VELOCITY
 	target_height = ground_height
 
+enum GraveType {Zombie, Skeleton}
 
-func set_type(type : String = "zombie"):
+func set_type(type : GraveType = GraveType.Zombie):
 	match type:
-		"zombie":
+		GraveType.Zombie:
 			creature_to_spawn = preload("res://Characters/zombie.tscn")
-		"skeleton":
+		GraveType.Skeleton:
 			print("not implemented yet")
 			#creature_to_spawn = preload("res://Characters/skeleton.tscn")
 
