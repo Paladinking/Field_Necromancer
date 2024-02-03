@@ -3,6 +3,7 @@ extends Node
 const CAMERA_OFFSET = Vector3(0, 100, 42)
 
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_RESIZE_DISABLED, true)
