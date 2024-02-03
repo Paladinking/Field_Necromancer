@@ -12,7 +12,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	$Camera3D.position = $Player.position + CAMERA_OFFSET
+	$Camera3D.position = $Player.position + CAMERA_OFFSET + $Player.camera_offset
 
 
 func _unhandled_key_input(event):

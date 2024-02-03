@@ -48,6 +48,7 @@ func set_type(type : String = "zombie"):
 			creature_to_spawn = preload("res://Characters/zombie.tscn")
 		"skeleton":
 			print("not implemented yet")
+			#creature_to_spawn = preload("res://Characters/skeleton.tscn")
 
 
 func spawn_character():
