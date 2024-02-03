@@ -5,9 +5,10 @@ const CAMERA_OFFSET = Vector3(0, 100, 42)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_RESIZE_DISABLED, true)
 	$Grave.raise()
 	$Grave.creature_to_spawn = preload("res://Characters/zombie.tscn")
-	pass # Replace with function body.sawdsaaaaads
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
