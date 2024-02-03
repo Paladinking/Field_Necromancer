@@ -3,6 +3,8 @@ extends Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$Grave.raise()
+	$Grave.creature_to_spawn = preload("res://Characters/zombie.tscn")
 	pass # Replace with function body.
 
 
