@@ -1,15 +1,10 @@
-extends CharacterBody3D
+extends Entity
 
 
 const SPEED = 10.0
 const MAX_LOOK_DISTANCE = 10.0
 
 var camera_offset = Vector3.ZERO
-
-
-# Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
-
 
 func _process(_delta):
 	if Input.is_action_just_pressed("dig") and $GraveDetectorArea.has_overlapping_bodies():
@@ -24,12 +19,9 @@ func _process(_delta):
 	var target = transform.basis * Vector3(look_dir.x, 0, look_dir.y) * MAX_LOOK_DISTANCE
 	camera_offset += (target - camera_offset) / 15
 	#camera_offset = camera_offset.clamp(target, target)
-
+	
 
 func _physics_process(delta):
-	if not is_on_floor():
-		velocity.y -= gravity * delta
-
 	var input_dir = Input.get_vector("go_left", "go_right", "go_up", "go_down")
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
@@ -39,7 +31,7 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
-	move_and_slide()
+	_finalize_move(delta)
 
 
 func on_grave_detected(body: Node3D):

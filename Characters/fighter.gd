@@ -1,11 +1,9 @@
-extends CharacterBody3D
+class_name Fighter
+extends Entity
 
-
-const SPEED = 2.5
-const JUMP_VELOCITY = 4.5
+const SPEED: float = 2.5
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var _target : Node3D = self
 
 @onready var _nav_agent: NavigationAgent3D = $NavigationAgent3D
@@ -27,8 +25,7 @@ func _ready() -> void:
 			
 	)
 
-
-func _physics_process(delta):
+func _physics_process(delta: float):
 	if has_target():
 		if _target.position.distance_squared_to(position) > 400:
 			var _potential_targets = _detection.get_overlapping_bodies()
@@ -46,16 +43,11 @@ func _physics_process(delta):
 	if _nav_agent.is_navigation_finished():
 		velocity.x = 0.0
 		velocity.z = 0.0
-		if not is_on_floor():
-			velocity.y -= gravity * delta
-		move_and_slide()
+		_finalize_move(delta)
 		return
 	
 	var next_path_position: Vector3 = _nav_agent.get_next_path_position()
-	var new_velocity: Vector3 = global_position.direction_to(next_path_position) * SPEED
+	velocity = global_position.direction_to(next_path_position) * SPEED
+	_finalize_move(delta)
 	
-	if not is_on_floor():
-		new_velocity.y -= gravity * delta
 	
-	velocity = new_velocity
-	move_and_slide()
