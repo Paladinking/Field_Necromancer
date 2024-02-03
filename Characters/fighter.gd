@@ -8,7 +8,8 @@ const JUMP_VELOCITY = 4.5
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var _target : Node3D = self
 
-@onready var _nav_agent: NavigationAgent3D = get_node("NavigationAgent3D")
+@onready var _nav_agent: NavigationAgent3D = $NavigationAgent3D
+@onready var _detection: Area3D = $DetectionArea
 
 func has_target() -> bool:
 	return not is_same(self, _target)
@@ -18,7 +19,7 @@ func clear_target():
 
 func _ready() -> void:
 	assert(not _nav_agent.avoidance_enabled, "Avoidance requires velocity_computed callback")
-	$DetectionArea.body_entered.connect(
+	_detection.body_entered.connect(
 		func(body: Node3D):
 			if not has_target() or body.position.distance_squared_to(self.position) < _target.position.distance_squared_to(self.position):
 				_target = body
@@ -29,10 +30,17 @@ func _ready() -> void:
 
 func _physics_process(delta):
 	if has_target():
-		if _target.position.distance_squared_to(position) > 120:
-			clear_target()
-			_nav_agent.set_target_position(position)
-		elif _target.position.distance_squared_to(_nav_agent.get_target_position()) > 1:
+		if _target.position.distance_squared_to(position) > 400:
+			var _potential_targets = _detection.get_overlapping_bodies()
+			if not _potential_targets:
+				clear_target()
+			else:
+				_target = _potential_targets.reduce(func(cur : Node3D, n: Node3D):
+					return n if n.position.distance_squared_to(position) < cur.position.distance_squared_to(position) else cur, 
+					_potential_targets[0]
+				)
+			
+		if _target.position.distance_squared_to(_nav_agent.get_target_position()) > 1:
 			_nav_agent.set_target_position(_target.position)
 	
 	if _nav_agent.is_navigation_finished():
