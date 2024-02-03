@@ -1,0 +1,50 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbg11uf2dpo1u"]
+
+[ext_resource type="PackedScene" uid="uid://7jfew48rxs6p" path="res://Characters/grave.tscn" id="1_riuki"]
+
+[node name="Battlefield" type="Node3D"]
+
+[node name="Grave" parent="." instance=ExtResource("1_riuki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.61786, 0, -6.48219)
+
+[node name="Grave2" parent="." instance=ExtResource("1_riuki")]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 10.507, 0, 5.50512)
+
+[node name="Grave3" parent="." instance=ExtResource("1_riuki")]
+transform = Transform3D(-0.889799, 0, 0.456353, 0, 1, 0, -0.456353, 0, -0.889799, -7.80351, 0, -6.33216)
+
+[node name="Grave4" parent="." instance=ExtResource("1_riuki")]
+transform = Transform3D(0.970169, 0, -0.24243, 0, 1, 0, 0.24243, 0, 0.970169, -5.85868, 0, 3.60503)
+
+[node name="Grave5" parent="." instance=ExtResource("1_riuki")]
+transform = Transform3D(0.922539, 0.127699, 0.364164, -0.0316838, 0.965541, -0.258314, -0.384602, 0.226767, 0.894795, 2.33244, 0, 8.18039)
+
+[node name="Grave6" parent="." instance=ExtResource("1_riuki")]
+transform = Transform3D(0.837681, 0, 0.54616, 0, 1, 0, -0.54616, 0, 0.837681, 1.95292, 0, -1.12835)
+
+[node name="Grave7" parent="." instance=ExtResource("1_riuki")]
+transform = Transform3D(0.970481, 0.241177, 0, -0.241177, 0.970481, 0, 0, 0, 1, -16.3823, 0, 10.8029)
+
+[node name="Grave8" parent="." instance=ExtResource("1_riuki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.78142, 0, -1.68024)
+
+[node name="Grave9" parent="." instance=ExtResource("1_riuki")]
+transform = Transform3D(1, 0, 0, 0, 0.981863, 0.189592, 0, -0.189592, 0.981863, -10.405, 0, 6.54573)
+
+[node name="Grave10" parent="." instance=ExtResource("1_riuki")]
+transform = Transform3D(0.944692, 0, 0.32796, 0, 1, 0, -0.32796, 0, 0.944692, -9.31256, 0, 15.7153)
+
+[node name="Grave11" parent="." instance=ExtResource("1_riuki")]
+transform = Transform3D(1, 0, 0, 0, 0.97103, 0.238957, 0, -0.238957, 0.97103, -1.62833, 0, 16.13)
+
+[node name="Grave12" parent="." instance=ExtResource("1_riuki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.6208, 0, 3.25907)
+
+[node name="Grave13" parent="." instance=ExtResource("1_riuki")]
+transform = Transform3D(-0.291186, 0, -0.956666, 0, 1, 0, 0.956666, 0, -0.291186, -14.2416, 0, -2.91897)
+
+[node name="Grave14" parent="." instance=ExtResource("1_riuki")]
+transform = Transform3D(0.790999, 0, 0.611817, 0, 1, 0, -0.611817, 0, 0.790999, 6.61887, 0, 13.7085)
+
+[node name="Grave17" parent="." instance=ExtResource("1_riuki")]
+transform = Transform3D(0.490472, -0.0913104, 0.86666, 0.0449731, 0.995822, 0.0794671, -0.870296, 0, 0.49253, 14.2494, 0, 10.1985)
