@@ -2,7 +2,6 @@ extends AnimatableBody3D
 
 
 const RAISE_VELOCITY = 5
-const CREATURE_START_DEPTH = 3
 
 var velocity : float
 var target_height : float
@@ -53,7 +52,7 @@ func spawn_character():
 	if not creature_to_spawn == null:
 		var creature = creature_to_spawn.instantiate()
 		creature.process_mode = PROCESS_MODE_DISABLED
-		creature.position = position - Vector3(0, CREATURE_START_DEPTH, 0)
+		creature.position = Vector3(position.x, start_height, position.z)
 		$CreatureHolder.add_child(creature)
-		target_height = position.y - CREATURE_START_DEPTH
+		target_height = start_height
 		velocity = -RAISE_VELOCITY
