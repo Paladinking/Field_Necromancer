@@ -6,9 +6,12 @@ const MAX_LOOK_DISTANCE = 10.0
 
 var camera_offset = Vector3.ZERO
 
-func _on_ready():
-	on_death.connect(get_tree().quit)
-
+func _ready():
+	on_death.connect(
+		func(_dir: Vector3):
+			queue_free()
+			get_tree().quit()
+	)
 func _process(_delta):
 	if Input.is_action_just_pressed("dig") and $GraveDetectorArea.has_overlapping_bodies():
 		var graves = $GraveDetectorArea.get_overlapping_bodies()

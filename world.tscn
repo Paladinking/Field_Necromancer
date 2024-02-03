@@ -21,6 +21,8 @@ size = Vector3(10, 2, 10)
 navigation_mesh = SubResource("NavigationMesh_ga0fh")
 
 [node name="WorldBounds" type="StaticBody3D" parent="."]
+collision_layer = 513
+collision_mask = 513
 
 [node name="FloorCollisionShape3D" type="CollisionShape3D" parent="WorldBounds"]
 shape = SubResource("WorldBoundaryShape3D_kg43f")
@@ -63,6 +65,8 @@ size = Vector3(100, 10, 1)
 
 [node name="Cube" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 31.0278)
+collision_layer = 513
+collision_mask = 513
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cube"]
 shape = SubResource("BoxShape3D_r3m3q")

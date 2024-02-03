@@ -8,11 +8,12 @@ var _collision_acceleration : Vector3 = Vector3(0, 0, 0)
 
 signal on_death
 
-func damage(dmg: int):
+func damage(dmg: int, dir: Vector3):
+	if _hp <= 0:
+		return
 	_hp -= dmg
 	if _hp <= 0:
-		queue_free()
-		on_death.emit()
+		on_death.emit(dir)
 
 func _finalize_move(delta: float):
 	if not is_on_floor():

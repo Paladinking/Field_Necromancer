@@ -13,6 +13,49 @@ var _target : Entity = self
 @export var dmg: int
 var _attack_cooldown : float = 0.0
 
+var rng : RandomNumberGenerator = RandomNumberGenerator.new()
+
+const _grave = preload("res://Characters/grave.tscn")
+
+func make_beep():
+	if !get_node_or_null("beep"):
+		var node = AudioStreamPlayer.new()
+		node.name = "beep"
+		node.volume_db = -12.0
+		add_child(node, true)
+	
+		var a = AudioStreamWAV.new()
+		a.format = AudioStreamWAV.FORMAT_8_BITS
+		a.mix_rate =44100
+	
+		var data = PackedByteArray([])
+		var length = a.mix_rate * 0.2  #200ms
+		var phase = 0.0
+		var DING_FREQUENCY = 800.0  #Windows ding.wav frequency lol
+		var increment = 1.0/(a.mix_rate/DING_FREQUENCY)
+	
+		for i in range(length):
+			var percent = i/length
+			var LFO = increment*-sin(percent*TAU)*10 + phase
+	
+			var byte = (128.0*pow(1-percent, 4) * sin(TAU*LFO) ) 
+			phase = fmod(phase+increment, 1.0)
+			
+			data.append( byte )
+			
+		a.data = data
+		node.stream = a 
+	
+	get_node("beep").play()
+
+func create_grave():
+	var grave = _grave.instantiate()
+	grave.position = Vector3(global_position.x, 0.0, global_position.z)
+	var parent = get_tree().get_nodes_in_group("Allies")[0]
+	grave.set_type(Grave.GraveType.Zombie)
+	parent.add_child(grave)	
+	queue_free()
+
 func has_target() -> bool:
 	return not is_same(self, _target)
 
@@ -31,30 +74,54 @@ func find_target():
 				dist = new_dist
 		set_target(nearest as Entity)
 
+func death(_dir: Vector3):
+	find_target()
+
 func clear_target():
-	if _target.on_death.is_connected(find_target):
-		_target.on_death.disconnect(find_target)
+	if _target.on_death.is_connected(death):
+		_target.on_death.disconnect(death)
 	_target = self
 	# Cancel navigation
 	_nav_agent.set_target_position(position)
 
 func set_target(target: Entity):
-	if _target.on_death.is_connected(find_target):
-		_target.on_death.disconnect(find_target)
+	if is_same(_target, target):
+		return
+	if _target.on_death.is_connected(death):
+		_target.on_death.disconnect(death)
 	_target = target
-	_target.on_death.connect(find_target)
+	_target.on_death.connect(death)
 	_nav_agent.set_target_position(_target.position)
 
 func _ready() -> void:
 	assert(not _nav_agent.avoidance_enabled, "Avoidance requires velocity_computed callback")
+	on_death.connect(_fly_away)
 	_detection.body_entered.connect(
 		func(body: Node3D):
 			assert(body is Entity)
 			if not has_target() or body.position.distance_squared_to(self.position) < _target.position.distance_squared_to(self.position):
 				set_target(body as Entity)
 	)
+	
+func _fly_away(dir: Vector3):
+	set_collision_mask_value(1, false)
+	set_collision_layer_value(2, false)
+	set_collision_layer_value(3, false)
+	set_collision_layer_value(4, false)
+	set_collision_layer_value(10, true)
+	set_collision_mask_value(10, true)
+	velocity = Vector3(dir.x * 6.0, 4.9, dir.z * 6.0).rotated(Vector3(0.0, 1.0, 0.0), rng.randf_range(-PI / 8, PI / 8))
 
 func _physics_process(delta: float):
+	if _target == null:
+		return
+	if _hp <= 0:
+		velocity.y -= gravity * delta
+		move_and_slide()
+		if is_on_floor():
+			create_grave()
+		return
+		
 	_attack_cooldown -= delta
 	if has_target():
 		var dist : float = _target.position.distance_squared_to(position)
@@ -63,15 +130,20 @@ func _physics_process(delta: float):
 			_attack_cooldown = ATTACK_COOLDWON
 			var dir : Vector3 = (_target.position - position).normalized()
 			dir.y = 0
-			_target._collision_acceleration += dir * 6
-			_collision_acceleration -= dir * 6
-			_target.damage(self.dmg)
+			_target._collision_acceleration = dir * 6
+			_collision_acceleration = -dir * 6
+			make_beep()
+			_target.damage(self.dmg, dir)
 			if _target is Fighter:
-				self.damage(_target.dmg)
+				_target.find_target()
+				_target._attack_cooldown = ATTACK_COOLDWON
+				self.damage(_target.dmg, -dir)
+				if _hp <= 0:
+					return
 		else:
 			if _nav_agent.is_navigation_finished() and dist < 5.0:
 				_nav_agent.set_target_position(_target.position)
-			if _target.position.distance_squared_to(position) > 400:
+			if _target.position.distance_squared_to(position) > 200:
 				find_target()
 		if _target.position.distance_squared_to(_nav_agent.get_target_position()) > 2.0:
 			_nav_agent.set_target_position(_target.position)
