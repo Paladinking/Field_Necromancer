@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cdvw0p45llw8x"]
+[gd_scene load_steps=5 format=3 uid="uid://cag01vc8xhji0"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_kg43f"]
 
@@ -9,7 +9,7 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_ct4y7"]
 size = Vector3(10, 10, 10)
 
-[node name="Node3D" type="Node3D"]
+[node name="World" type="Node3D"]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
@@ -62,9 +62,3 @@ shape = SubResource("BoxShape3D_ct4y7")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="RigidBody3D"]
 size = Vector3(10, 10, 10)
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-1, -1.77636e-15, -8.74228e-08, -2.41043e-08, 0.961238, 0.275721, 8.40341e-08, 0.275721, -0.961238, 0, 21.6178, -87.3605)
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -0.173648, 0.984808, 0, -0.984808, -0.173648, 0, 273.565, -299.579)

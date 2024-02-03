@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://ffk16i63c45l"]
+
+[ext_resource type="Script" path="res://Characters/zombie.gd" id="1_2i0eo"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xkjkx"]
+
+[node name="Zombie" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("1_2i0eo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_xkjkx")
+
+[node name="CSGSphere3D" type="CSGBox3D" parent="."]
+size = Vector3(1, 2, 1)
