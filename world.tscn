@@ -1,0 +1,70 @@
+[gd_scene load_steps=5 format=3 uid="uid://cdvw0p45llw8x"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_kg43f"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_ib1wx"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_1fstk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ct4y7"]
+size = Vector3(10, 10, 10)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="FloorCollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("WorldBoundaryShape3D_kg43f")
+
+[node name="FloorCSGBox3D" type="CSGBox3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+size = Vector3(100, 0.2, 100)
+
+[node name="LeftWallCollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -50)
+shape = SubResource("WorldBoundaryShape3D_ib1wx")
+
+[node name="RightWallCollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(-1, -8.74228e-08, 3.82137e-15, 0, -4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, 0, 0, 50)
+shape = SubResource("WorldBoundaryShape3D_ib1wx")
+
+[node name="TopWallCollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 50, 0, 0)
+shape = SubResource("WorldBoundaryShape3D_ib1wx")
+
+[node name="BottomWallCollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -50, 0, 0)
+shape = SubResource("WorldBoundaryShape3D_ib1wx")
+
+[node name="BottomCSGBox3D" type="CSGBox3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.5, 5, 0)
+size = Vector3(1, 10, 100)
+
+[node name="TopCSGBox3D" type="CSGBox3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.5, 5, 0)
+size = Vector3(1, 10, 100)
+
+[node name="RightCSGBox3D" type="CSGBox3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 50.5)
+size = Vector3(100, 10, 1)
+
+[node name="LeftCSGBox3D" type="CSGBox3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -50.5)
+size = Vector3(100, 10, 1)
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.2966, -3.9297)
+physics_material_override = SubResource("PhysicsMaterial_1fstk")
+constant_force = Vector3(10, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("BoxShape3D_ct4y7")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="RigidBody3D"]
+size = Vector3(10, 10, 10)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-1, -1.77636e-15, -8.74228e-08, -2.41043e-08, 0.961238, 0.275721, 8.40341e-08, 0.275721, -0.961238, 0, 21.6178, -87.3605)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.173648, 0.984808, 0, -0.984808, -0.173648, 0, 273.565, -299.579)
