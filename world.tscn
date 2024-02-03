@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cag01vc8xhji0"]
+[gd_scene load_steps=6 format=3 uid="uid://cdvw0p45llw8x"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_ga0fh"]
-vertices = PackedVector3Array(-49.25, 0.3, -49.25, -49.25, 0.3, 49.5, 49.5, 0.3, 49.5, 49.5, 0.3, -49.25)
-polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+vertices = PackedVector3Array(-48.75, 0.3, 27, -6, 0.3, 27.25, -6, 0.3, 25.75, -48.75, 0.3, 27, -6, 0.3, 25.75, -5.25, 0.3, 25, -4, 0.3, -48.75, -48.75, 0.3, -48.75, -5.25, 0.3, 25, -3.75, 0.3, 25, -4, 0.3, -48.75, -3.75, 0.3, 25, 4, 0.3, 25, 4.25, 0.3, -48.75, -4, 0.3, -48.75, 6.25, 0.3, 25.75, 6.25, 0.3, 27.25, 49, 0.3, 27, 5.5, 0.3, 25, 6.25, 0.3, 25.75, 49, 0.3, 27, 49, 0.3, -48.75, 4.25, 0.3, -48.75, 4.25, 0.3, -48.75, 4, 0.3, 25, 5.5, 0.3, 25, -4, 0.3, 49, -3.75, 0.3, 37.25, -5.25, 0.3, 37.25, -4, 0.3, 49, -5.25, 0.3, 37.25, -6, 0.3, 36.5, -48.75, 0.3, 27, -48.75, 0.3, 49, -6, 0.3, 36.5, -6, 0.3, 27.25, -48.75, 0.3, 27, -4, 2.3, 27, -4, 2.3, 35.25, 4, 2.3, 35.25, 4, 2.3, 27, 5.5, 0.3, 37.25, 4, 0.3, 37.25, 4.25, 0.3, 49, 6.25, 0.3, 36.5, 5.5, 0.3, 37.25, 4.25, 0.3, 49, 49, 0.3, 49, 49, 0.3, 27, 49, 0.3, 27, 6.25, 0.3, 27.25, 6.25, 0.3, 36.5, -3.75, 0.3, 27.25, -3.75, 0.3, 35, 4, 0.3, 35, 4, 0.3, 27.25, -4, 0.3, 49, 4.25, 0.3, 49, 4, 0.3, 37.25, -3.75, 0.3, 37.25)
+polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(4, 3, 5), PackedInt32Array(5, 3, 7), PackedInt32Array(5, 7, 6), PackedInt32Array(10, 9, 8), PackedInt32Array(11, 14, 12), PackedInt32Array(12, 14, 13), PackedInt32Array(17, 16, 15), PackedInt32Array(19, 18, 20), PackedInt32Array(20, 18, 21), PackedInt32Array(21, 18, 22), PackedInt32Array(25, 24, 23), PackedInt32Array(28, 27, 26), PackedInt32Array(30, 29, 31), PackedInt32Array(31, 29, 33), PackedInt32Array(31, 33, 32), PackedInt32Array(36, 35, 34), PackedInt32Array(40, 39, 37), PackedInt32Array(37, 39, 38), PackedInt32Array(43, 42, 41), PackedInt32Array(45, 44, 46), PackedInt32Array(46, 44, 47), PackedInt32Array(47, 44, 48), PackedInt32Array(51, 50, 49), PackedInt32Array(55, 54, 52), PackedInt32Array(52, 54, 53), PackedInt32Array(59, 58, 56), PackedInt32Array(56, 58, 57)]
+geometry_parsed_geometry_type = 2
+agent_radius = 0.8
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_kg43f"]
 
@@ -14,6 +16,7 @@ size = Vector3(10, 2, 10)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_epts0"]
 
 [node name="World" type="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 navigation_mesh = SubResource("NavigationMesh_ga0fh")
 
 [node name="WorldBounds" type="StaticBody3D" parent="."]
