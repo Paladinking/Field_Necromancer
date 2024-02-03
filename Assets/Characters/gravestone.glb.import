@@ -29,6 +29,21 @@ animation/fps=30
 animation/trimming=false
 animation/remove_immutable_tracks=true
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:Church_lofi": {
+"import/skip_import": true
+},
+"PATH:Hus_big_lofi": {
+"import/skip_import": true
+},
+"PATH:Hus_med_lofi": {
+"import/skip_import": true
+},
+"PATH:Hus_small_lofi": {
+"import/skip_import": true
+}
+}
+}
 gltf/naming_version=1
 gltf/embedded_image_handling=1
