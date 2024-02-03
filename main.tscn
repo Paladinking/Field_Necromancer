@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://c5fhpybtumbeq"]
+[gd_scene load_steps=6 format=3 uid="uid://c5fhpybtumbeq"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_hr2f8"]
 [ext_resource type="PackedScene" uid="uid://40t17omux2gf" path="res://Characters/player.tscn" id="1_q5uns"]
 [ext_resource type="PackedScene" uid="uid://cag01vc8xhji0" path="res://world.tscn" id="3_nlw61"]
 [ext_resource type="PackedScene" uid="uid://7jfew48rxs6p" path="res://Characters/grave.tscn" id="4_64yod"]
+[ext_resource type="PackedScene" path="res://Characters/fighter.tscn" id="5_k65jl"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_hr2f8")
@@ -21,3 +22,6 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 
 
 [node name="Grave" parent="." instance=ExtResource("4_64yod")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.871, -1, 6.301)
+
+[node name="Fighter" parent="." instance=ExtResource("5_k65jl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.80188, 11.3745)
