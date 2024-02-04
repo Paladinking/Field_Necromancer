@@ -193,7 +193,7 @@ func _physics_process(delta: float):
 			velocity = global_position.direction_to(next_path_position) * SPEED
 	elif _attack_cooldown <= 0.0:
 		if _nav_agent.is_navigation_finished():
-			var len = rng.randf_range(3, 10)
+			var len = rng.randf_range(3, 5)
 			var angle = rng.randf_range(0.0, 2 * PI)
 			_nav_agent.set_target_position(position + len * Vector3(sin(angle), 0.0, cos(angle)))
 		var next_path_position: Vector3 = _nav_agent.get_next_path_position()

@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dl732gpl788of"]
+[gd_scene load_steps=7 format=3 uid="uid://dl732gpl788of"]
 
-[ext_resource type="PackedScene" uid="uid://jlhkdovwdqe2" path="res://Buildings/house_med.tscn" id="1_1fq07"]
-[ext_resource type="PackedScene" uid="uid://d2q8ytttpvmfs" path="res://Buildings/house_small.tscn" id="2_rldai"]
+[ext_resource type="PackedScene" uid="uid://c1tdngfmy4lbk" path="res://Buildings/house_med.tscn" id="1_1fq07"]
+[ext_resource type="PackedScene" uid="uid://bqadddckjkbme" path="res://Buildings/house_small.tscn" id="2_rldai"]
 [ext_resource type="PackedScene" uid="uid://cplaonh0ihbnm" path="res://Buildings/house_big.tscn" id="3_j3q1m"]
 [ext_resource type="PackedScene" uid="uid://d1fc8ned6hc4e" path="res://Characters/fighter.tscn" id="4_ynndq"]
+[ext_resource type="PackedScene" uid="uid://3qkrj76ekrim" path="res://Characters/fighter_strong.tscn" id="5_mbhl8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4cguw"]
 albedo_color = Color(0.72549, 0.623529, 0.12549, 1)
@@ -36,7 +37,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.39967, 0, -9.02788)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.107, 0, 13.9153)
 
 [node name="Fighter3" parent="Enemies" instance=ExtResource("4_ynndq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.72, 0, -9.02788)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.68023, 0, 11.1305)
 
 [node name="Fighter4" parent="Enemies" instance=ExtResource("4_ynndq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.05582, 0, 4.54089)
@@ -44,5 +45,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.05582, 0, 4.54089)
 [node name="Fighter5" parent="Enemies" instance=ExtResource("4_ynndq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.508759, 0, 21.5798)
 
-[node name="Fighter6" parent="Enemies" instance=ExtResource("4_ynndq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.7604, 0, 12.4569)
+[node name="Fighter6" parent="Enemies" instance=ExtResource("5_mbhl8")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -13.477, 0, -9.26166)

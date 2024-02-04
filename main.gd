@@ -48,7 +48,7 @@ func _process(_delta):
 
 func _display_victory():
 	$CanvasLayer/Victory.visible = true
-	print("You win!!!!!")
+	#print("You win!!!!!")
 
 
 func _unhandled_key_input(event):

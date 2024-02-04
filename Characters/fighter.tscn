@@ -16,7 +16,7 @@ radius = 15.0
 collision_layer = 5
 script = ExtResource("1_pdd31")
 dmg = 4
-_hp = 20
+_hp = 30
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

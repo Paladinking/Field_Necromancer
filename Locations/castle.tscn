@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cyxnk07pigw13"]
+[gd_scene load_steps=8 format=3 uid="uid://cyxnk07pigw13"]
 
 [ext_resource type="PackedScene" uid="uid://dt6ktmhcn2wdn" path="res://Buildings/church.tscn" id="1_55bar"]
 [ext_resource type="PackedScene" uid="uid://cplaonh0ihbnm" path="res://Buildings/house_big.tscn" id="2_w8prn"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bqadddckjkbme" path="res://Buildings/house_small.tscn" id="4_w32iq"]
 [ext_resource type="PackedScene" uid="uid://da7futuxwh1lo" path="res://Buildings/wall.tscn" id="5_w2mqb"]
 [ext_resource type="PackedScene" uid="uid://d1fc8ned6hc4e" path="res://Characters/fighter.tscn" id="6_8np6c"]
+[ext_resource type="PackedScene" uid="uid://3qkrj76ekrim" path="res://Characters/fighter_strong.tscn" id="7_i87cw"]
 
 [node name="Castle" type="Node3D"]
 
@@ -118,45 +119,68 @@ transform = Transform3D(-1.2, 0, 1.81195e-07, 0, 1.2, 0, -1.81195e-07, 0, -1.2, 
 
 [node name="Fighter" parent="Enemies" instance=ExtResource("6_8np6c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 0, 0)
+is_mission_target = true
 
 [node name="Fighter2" parent="Enemies" instance=ExtResource("6_8np6c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, 0)
+is_mission_target = true
 
 [node name="Fighter3" parent="Enemies" instance=ExtResource("6_8np6c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 0, -9)
+is_mission_target = true
 
 [node name="Fighter4" parent="Enemies" instance=ExtResource("6_8np6c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 0, 13)
+is_mission_target = true
 
 [node name="Fighter5" parent="Enemies" instance=ExtResource("6_8np6c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, 18)
+is_mission_target = true
 
 [node name="Fighter6" parent="Enemies" instance=ExtResource("6_8np6c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 5)
+is_mission_target = true
 
 [node name="Fighter7" parent="Enemies" instance=ExtResource("6_8np6c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -14)
+is_mission_target = true
 
 [node name="Fighter8" parent="Enemies" instance=ExtResource("6_8np6c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7)
+is_mission_target = true
 
 [node name="Fighter9" parent="Enemies" instance=ExtResource("6_8np6c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 16)
+is_mission_target = true
 
 [node name="Fighter10" parent="Enemies" instance=ExtResource("6_8np6c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -4)
+is_mission_target = true
 
 [node name="Fighter11" parent="Enemies" instance=ExtResource("6_8np6c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 0)
+is_mission_target = true
 
 [node name="Fighter12" parent="Enemies" instance=ExtResource("6_8np6c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 17)
+is_mission_target = true
 
 [node name="Fighter13" parent="Enemies" instance=ExtResource("6_8np6c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 14)
+is_mission_target = true
 
 [node name="Fighter14" parent="Enemies" instance=ExtResource("6_8np6c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, -14)
+is_mission_target = true
 
 [node name="Fighter15" parent="Enemies" instance=ExtResource("6_8np6c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20)
+is_mission_target = true
+
+[node name="Fighter16" parent="Enemies" instance=ExtResource("7_i87cw")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -5.51941, 0, 5.14773)
+is_mission_target = true
+
+[node name="Fighter17" parent="Enemies" instance=ExtResource("7_i87cw")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, -12.8976)
+is_mission_target = true
