@@ -1,10 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://c5fhpybtumbeq"]
+[gd_scene load_steps=4 format=3 uid="uid://c5fhpybtumbeq"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_hr2f8"]
 [ext_resource type="PackedScene" uid="uid://40t17omux2gf" path="res://Characters/player.tscn" id="1_q5uns"]
 [ext_resource type="PackedScene" uid="uid://cdvw0p45llw8x" path="res://world.tscn" id="3_nlw61"]
-[ext_resource type="PackedScene" uid="uid://d1fc8ned6hc4e" path="res://Characters/fighter.tscn" id="5_k65jl"]
-[ext_resource type="PackedScene" uid="uid://3qkrj76ekrim" path="res://Characters/fighter_strong.tscn" id="5_ulob8"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_hr2f8")
@@ -32,15 +30,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70, 0, 0)
 [node name="World" parent="." instance=ExtResource("3_nlw61")]
 
 [node name="Enemies" type="Node" parent="." groups=["Enemies"]]
-
-[node name="Fighter3" parent="Enemies" instance=ExtResource("5_ulob8")]
-transform = Transform3D(1.44, 0, 0, 0, 1.44, 0, 0, 0, 1.44, 7.32971, 0, 0.472871)
-
-[node name="Fighter" parent="Enemies" instance=ExtResource("5_k65jl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.3301, 0, -0.897903)
-
-[node name="Fighter2" parent="Enemies" instance=ExtResource("5_ulob8")]
-transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -8.8849, 0, 1.96416)
 
 [node name="Allies" type="Node" parent="." groups=["Allies"]]
 

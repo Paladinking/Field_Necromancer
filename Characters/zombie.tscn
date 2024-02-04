@@ -16,7 +16,7 @@ radius = 4.0
 [node name="Zombie" type="CharacterBody3D"]
 collision_layer = 3
 script = ExtResource("1_2i0eo")
-dmg = 2
+dmg = 4
 _hp = 20
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
