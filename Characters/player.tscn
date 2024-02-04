@@ -37,5 +37,3 @@ shape = SubResource("CylinderShape3D_t31kh")
 
 [node name="necromancer" parent="." instance=ExtResource("2_p0tns")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 1, 0)
-
-[connection signal="body_entered" from="GraveDetectorArea" to="." method="on_grave_detected"]

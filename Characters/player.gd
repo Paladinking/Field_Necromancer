@@ -2,20 +2,16 @@ extends Entity
 
 
 const SPEED = 10.0
-const MAX_LOOK_DISTANCE = 10.0
 const WALK_ANIMATION = "Animation"
-
-var camera_offset = Vector3.ZERO
 
 
 func _ready():
 	on_death.connect(
 		func(_dir: Vector3):
 			queue_free()
-			get_tree().quit()
+			#get_tree().quit()
 	)
 	$necromancer/AnimationPlayer.play(WALK_ANIMATION)
-	$necromancer/AnimationPlayer.pause()
 
 
 func _process(_delta):
@@ -25,8 +21,7 @@ func _process(_delta):
 		for grave in graves:
 			if position.distance_squared_to(grave.position) < position.distance_squared_to(closest_grave.position):
 				closest_grave = grave
-		closest_grave.spawn_character()
-	#camera_offset = camera_offset.clamp(target, target)
+		(closest_grave as Grave).spawn_character()
 
 
 func _physics_process(delta):
@@ -44,10 +39,3 @@ func _physics_process(delta):
 
 	_finalize_move(delta)
 
-	var look_dir = Input.get_vector("look_left", "look_right", "look_up", "look_down")
-	var target = transform.basis * Vector3(look_dir.x, 0, look_dir.y) * MAX_LOOK_DISTANCE
-	camera_offset += (target - camera_offset) / 15
-
-
-func on_grave_detected(body: Node3D):
-	print("grave deteced!")

@@ -54,7 +54,7 @@ func set_type(type : GraveType = GraveType.Zombie):
 
 
 func spawn_character():
-	print("spawning thing from grave!")
+	#print("spawning thing from grave!")
 	if creature_to_spawn == null:
 		creature_to_spawn = preload("res://Characters/zombie.tscn")
 
