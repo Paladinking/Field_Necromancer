@@ -118,7 +118,7 @@ transform = Transform3D(-1.2, 0, 1.81195e-07, 0, 1.2, 0, -1.81195e-07, 0, -1.2, 
 [node name="Enemies" type="Node3D" parent="."]
 
 [node name="Fighter" parent="Enemies" instance=ExtResource("6_8np6c")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 0)
 is_mission_target = true
 
 [node name="Fighter2" parent="Enemies" instance=ExtResource("6_8np6c")]
@@ -126,15 +126,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, 0)
 is_mission_target = true
 
 [node name="Fighter3" parent="Enemies" instance=ExtResource("6_8np6c")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 0, -9)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 0, -11)
 is_mission_target = true
 
 [node name="Fighter4" parent="Enemies" instance=ExtResource("6_8np6c")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 0, 13)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 0, 13)
 is_mission_target = true
 
 [node name="Fighter5" parent="Enemies" instance=ExtResource("6_8np6c")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, 18)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 17)
 is_mission_target = true
 
 [node name="Fighter6" parent="Enemies" instance=ExtResource("6_8np6c")]
@@ -146,7 +146,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -14)
 is_mission_target = true
 
 [node name="Fighter8" parent="Enemies" instance=ExtResource("6_8np6c")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
 is_mission_target = true
 
 [node name="Fighter9" parent="Enemies" instance=ExtResource("6_8np6c")]
@@ -158,11 +158,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -4)
 is_mission_target = true
 
 [node name="Fighter11" parent="Enemies" instance=ExtResource("6_8np6c")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, -2)
 is_mission_target = true
 
 [node name="Fighter12" parent="Enemies" instance=ExtResource("6_8np6c")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 17)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 17)
 is_mission_target = true
 
 [node name="Fighter13" parent="Enemies" instance=ExtResource("6_8np6c")]
@@ -174,7 +174,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, -14)
 is_mission_target = true
 
 [node name="Fighter15" parent="Enemies" instance=ExtResource("6_8np6c")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -20)
 is_mission_target = true
 
 [node name="Fighter16" parent="Enemies" instance=ExtResource("7_i87cw")]
@@ -182,5 +182,5 @@ transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -5.51941, 0, 5.14773)
 is_mission_target = true
 
 [node name="Fighter17" parent="Enemies" instance=ExtResource("7_i87cw")]
-transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, -12.8976)
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 27, 0, 0.1024)
 is_mission_target = true

@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dxff4i34xhsx3"]
+[gd_scene load_steps=6 format=3 uid="uid://dxff4i34xhsx3"]
 
-[ext_resource type="PackedScene" uid="uid://jlhkdovwdqe2" path="res://Buildings/house_med.tscn" id="1_1gsj0"]
-[ext_resource type="PackedScene" uid="uid://d2q8ytttpvmfs" path="res://Buildings/house_small.tscn" id="2_a6lwj"]
+[ext_resource type="PackedScene" uid="uid://c1tdngfmy4lbk" path="res://Buildings/house_med.tscn" id="1_1gsj0"]
+[ext_resource type="PackedScene" uid="uid://bqadddckjkbme" path="res://Buildings/house_small.tscn" id="2_a6lwj"]
 [ext_resource type="PackedScene" uid="uid://da7futuxwh1lo" path="res://Buildings/wall.tscn" id="3_4xskk"]
 [ext_resource type="PackedScene" uid="uid://d1fc8ned6hc4e" path="res://Characters/fighter.tscn" id="4_ar07a"]
+[ext_resource type="PackedScene" uid="uid://7jfew48rxs6p" path="res://Characters/grave.tscn" id="5_tm8vb"]
 
 [node name="Tavern" type="Node3D"]
 
@@ -49,3 +50,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7)
 
 [node name="Fighter5" parent="Enemies" instance=ExtResource("4_ar07a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 7)
+
+[node name="Grave" parent="." instance=ExtResource("5_tm8vb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.979, -5, -21.0988)
+
+[node name="Grave2" parent="." instance=ExtResource("5_tm8vb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.3795, -5, -10.2124)
+
+[node name="Grave3" parent="." instance=ExtResource("5_tm8vb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.8955, -5, -21.0988)
+
+[node name="Grave4" parent="." instance=ExtResource("5_tm8vb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.8608, -5, 14.2995)
+
+[node name="Grave5" parent="." instance=ExtResource("5_tm8vb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.9071, -5, 9.61445)

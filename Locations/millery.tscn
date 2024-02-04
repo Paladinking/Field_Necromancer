@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://duxb1oqj0achl"]
+
+[ext_resource type="PackedScene" uid="uid://cou0chsuh1fre" path="res://Buildings/windmill.tscn" id="1_8pfq1"]
+[ext_resource type="PackedScene" uid="uid://c1tdngfmy4lbk" path="res://Buildings/house_med.tscn" id="2_pdnqg"]
+[ext_resource type="PackedScene" uid="uid://bqadddckjkbme" path="res://Buildings/house_small.tscn" id="3_rqc8g"]
+[ext_resource type="PackedScene" uid="uid://cplaonh0ihbnm" path="res://Buildings/house_big.tscn" id="4_q40iq"]
+[ext_resource type="PackedScene" uid="uid://d1fc8ned6hc4e" path="res://Characters/fighter.tscn" id="5_n0c57"]
+[ext_resource type="PackedScene" uid="uid://7jfew48rxs6p" path="res://Characters/grave.tscn" id="6_k8ds7"]
+
+[node name="Millery" type="Node3D"]
+
+[node name="Windmill" parent="." instance=ExtResource("1_8pfq1")]
+transform = Transform3D(-5.24537e-08, 0, 1.2, 0, 1.2, 0, -1.2, 0, -5.24537e-08, -4, 0, -15)
+
+[node name="House_med" parent="." instance=ExtResource("2_pdnqg")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9, 0, 3)
+
+[node name="House_small" parent="." instance=ExtResource("3_rqc8g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 4)
+
+[node name="House_big" parent="." instance=ExtResource("4_q40iq")]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -21, 0, -9)
+
+[node name="Windmill2" parent="." instance=ExtResource("1_8pfq1")]
+transform = Transform3D(-5.24537e-08, 0, 1.2, 0, 1.2, 0, -1.2, 0, -5.24537e-08, 12, 0, -13)
+
+[node name="Enemies" type="Node3D" parent="."]
+
+[node name="Fighter" parent="Enemies" instance=ExtResource("5_n0c57")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, -3)
+
+[node name="Fighter2" parent="Enemies" instance=ExtResource("5_n0c57")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -3)
+
+[node name="Fighter3" parent="Enemies" instance=ExtResource("5_n0c57")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, 5)
+
+[node name="Grave" parent="." instance=ExtResource("6_k8ds7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -5, 10)
+
+[node name="Grave2" parent="." instance=ExtResource("6_k8ds7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, -5, 9)
+
+[node name="Grave3" parent="." instance=ExtResource("6_k8ds7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, -5, 15)
