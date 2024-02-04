@@ -19,6 +19,8 @@ func set_target_location(pos: Vector3) -> void :
 
 
 func set_following(goal: Node3D) -> void:
+	if _has_target_location:
+		return
 	if $AgressiveArea.has_overlapping_bodies():
 		find_target()
 		return
@@ -40,8 +42,10 @@ func _ready():
 
 func _physics_process(delta: float):
 	if not raising:
-		if _following_time > 0.0:
+		if _following_time > 0.0 && _attack_cooldown <= 0.0:
 			_following_time -= delta
+			if _following_time <= 0.0:
+				_has_target_location = false
 			if _has_target_location:
 				if _nav_agent.is_navigation_finished():
 					_has_target_location = false
@@ -50,7 +54,12 @@ func _physics_process(delta: float):
 				_nav_agent.set_target_position(_following.position)
 			var next_path_position: Vector3 = _nav_agent.get_next_path_position()
 			velocity = global_position.direction_to(next_path_position) * SPEED
-
+			_attack_cooldown -= delta
+			if not velocity.is_zero_approx() and _attack_cooldown <= 0:
+				$model/AnimationPlayer.play(WALKING_ANIMATION)
+				$model.rotation.y = atan2(velocity.x, velocity.z) + PI
+			elif $model/AnimationPlayer.assigned_animation == WALKING_ANIMATION and $model/AnimationPlayer.is_playing():
+				$model/AnimationPlayer.pause()
 			_finalize_move(delta)
 		else:
 			super._physics_process(delta)

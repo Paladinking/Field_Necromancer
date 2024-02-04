@@ -10,6 +10,7 @@ var player_position : Vector3 = Vector3.ZERO
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$CanvasLayer/Victory.visible = false
 	DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_RESIZE_DISABLED, true)
 	$Player.on_death.connect(
 		func(_dir : Vector3):
@@ -33,6 +34,10 @@ func _process(_delta):
 	camera_offset += (target - camera_offset) / 15
 
 	$Camera3D.position = STATIC_CAMERA_OFFSET + camera_offset + player_position
+
+	if $Enemies.get_child_count() == 0:
+		$CanvasLayer/Victory.visible = true
+		print("You win!!!!!")
 
 
 func _unhandled_key_input(event):

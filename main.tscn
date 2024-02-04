@@ -35,3 +35,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.3301, 0, -0.897903)
 
 [node name="Allies" type="Node" parent="." groups=["Allies"]]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Victory" type="Label" parent="CanvasLayer"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_right = -2.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 200
+text = "You Won!!!"
+horizontal_alignment = 1
+vertical_alignment = 1

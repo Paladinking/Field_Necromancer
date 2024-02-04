@@ -3,7 +3,10 @@ extends Entity
 
 const SPEED = 10.0
 const WALK_ANIMATION = "Animation"
+const SEND_CHARGE : float = 0.4
 
+var send_cooldown : float = 0.0
+var send_time : float = 0.0
 
 func _ready():
 	on_death.connect(
@@ -20,6 +23,20 @@ func _process(_delta):
 		for zombie in zombies:
 			if zombie is Zombie:
 				zombie.set_following(self)
+	
+
+	var look_dir = Input.get_vector("look_left", "look_right", "look_up", "look_down")
+	if look_dir.length_squared() > 0:
+		send_time += _delta
+		if send_time >= SEND_CHARGE:
+			send_time = 0.0
+			var zombies = $ZombieFollowArea.get_overlapping_bodies()
+			for zombie in zombies:
+				if zombie is Zombie and zombie._following_time > 0.0:
+					zombie.set_target_location(zombie.position + 50 * Vector3(look_dir.x, 0, look_dir.y))
+	else:
+		send_time = 0.0
+		
 	
 	if Input.is_action_just_pressed("dig") and $GraveDetectorArea.has_overlapping_bodies():
 		var graves = $GraveDetectorArea.get_overlapping_bodies()
