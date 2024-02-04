@@ -16,6 +16,8 @@ var _attack_cooldown : float = ATTACK_COOLDWON
 
 @onready var _max_hp : int = _hp
 
+@export var is_mission_target : bool = false
+
 var is_skeleton : bool = false
 
 var rng : RandomNumberGenerator = RandomNumberGenerator.new()

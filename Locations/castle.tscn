@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://dt6ktmhcn2wdn" path="res://Buildings/church.tscn" id="1_55bar"]
 [ext_resource type="PackedScene" uid="uid://cplaonh0ihbnm" path="res://Buildings/house_big.tscn" id="2_w8prn"]
-[ext_resource type="PackedScene" uid="uid://jlhkdovwdqe2" path="res://Buildings/house_med.tscn" id="3_5q75x"]
-[ext_resource type="PackedScene" uid="uid://d2q8ytttpvmfs" path="res://Buildings/house_small.tscn" id="4_w32iq"]
+[ext_resource type="PackedScene" uid="uid://c1tdngfmy4lbk" path="res://Buildings/house_med.tscn" id="3_5q75x"]
+[ext_resource type="PackedScene" uid="uid://bqadddckjkbme" path="res://Buildings/house_small.tscn" id="4_w32iq"]
 [ext_resource type="PackedScene" uid="uid://da7futuxwh1lo" path="res://Buildings/wall.tscn" id="5_w2mqb"]
 [ext_resource type="PackedScene" uid="uid://d1fc8ned6hc4e" path="res://Characters/fighter.tscn" id="6_8np6c"]
 
@@ -91,19 +91,10 @@ transform = Transform3D(-1.2, 0, 1.81195e-07, 0, 1.2, 0, -1.81195e-07, 0, -1.2, 
 transform = Transform3D(-5.24537e-08, 0, -1.2, 0, 1.2, 0, 1.2, 0, -5.24537e-08, 25, 0, 22)
 
 [node name="Wall19" parent="." instance=ExtResource("5_w2mqb")]
-transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 28, 0, 19)
-
-[node name="Wall20" parent="." instance=ExtResource("5_w2mqb")]
-transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 28, 0, 13)
-
-[node name="Wall21" parent="." instance=ExtResource("5_w2mqb")]
-transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 28, 0, 7)
+transform = Transform3D(1.07226, 0, -0.538752, 0, 1.2, 0, 0.538752, 0, 1.07226, 29.4964, 0, 18.4726)
 
 [node name="Wall22" parent="." instance=ExtResource("5_w2mqb")]
-transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 28, 0, -12)
-
-[node name="Wall23" parent="." instance=ExtResource("5_w2mqb")]
-transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 28, 0, -18)
+transform = Transform3D(-1.14673, 0, -0.353569, 0, 1.2, 0, 0.353569, 0, -1.14673, 28.7563, 0, -17.275)
 
 [node name="Wall24" parent="." instance=ExtResource("5_w2mqb")]
 transform = Transform3D(-5.24537e-08, 0, -1.2, 0, 1.2, 0, 1.2, 0, -5.24537e-08, 25, 0, -21)

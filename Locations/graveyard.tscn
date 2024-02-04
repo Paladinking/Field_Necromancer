@@ -34,24 +34,30 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5, 0, 5.5)
 
 [node name="Grave" parent="Graves" instance=ExtResource("2_2u7ao")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11, 0, 6)
+type = 1
 
 [node name="Grave2" parent="Graves" instance=ExtResource("2_2u7ao")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11, 0, 3)
 
 [node name="Grave3" parent="Graves" instance=ExtResource("2_2u7ao")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11, 0, -3)
+type = 1
 
 [node name="Grave4" parent="Graves" instance=ExtResource("2_2u7ao")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11, 0, -6)
+type = 1
 
 [node name="Grave5" parent="Graves" instance=ExtResource("2_2u7ao")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2, 0, 6)
+type = 1
 
 [node name="Grave6" parent="Graves" instance=ExtResource("2_2u7ao")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2, 0, 3)
+type = 1
 
 [node name="Grave7" parent="Graves" instance=ExtResource("2_2u7ao")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2, 0, -3)
+type = 1
 
 [node name="Grave8" parent="Graves" instance=ExtResource("2_2u7ao")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2, 0, -6)
@@ -61,12 +67,14 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7, 0,
 
 [node name="Grave10" parent="Graves" instance=ExtResource("2_2u7ao")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7, 0, 3)
+type = 1
 
 [node name="Grave11" parent="Graves" instance=ExtResource("2_2u7ao")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7, 0, -3)
 
 [node name="Grave12" parent="Graves" instance=ExtResource("2_2u7ao")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7, 0, -6)
+type = 1
 
 [node name="Enemies" type="Node3D" parent="."]
 

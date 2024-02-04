@@ -6,6 +6,7 @@ const MAX_LOOK_DISTANCE = 10.0
 var player_alive : bool = true
 var camera_offset : Vector3 = Vector3.ZERO
 var player_position : Vector3 = Vector3.ZERO
+var enemy_targets : int
 
 
 # Called when the node enters the scene tree for the first time.
@@ -19,7 +20,16 @@ func _ready():
 	)
 	$Player.position = $World/PlayerSpawn.position
 	var enemy_parent = $Enemies
+	enemy_targets = 0
 	for enemy in find_children("Fighter*"):
+		if (enemy as Fighter).is_mission_target:
+			enemy_targets += 1
+			(enemy as Fighter).on_death.connect(
+				func(_dir : Vector3):
+					enemy_targets -= 1
+					if enemy_targets == 0:
+						_display_victory()
+			)
 		if enemy.get_parent() != enemy_parent:
 			enemy.reparent(enemy_parent)
 
@@ -35,9 +45,10 @@ func _process(_delta):
 
 	$Camera3D.position = STATIC_CAMERA_OFFSET + camera_offset + player_position
 
-	if $Enemies.get_child_count() == 0:
-		$CanvasLayer/Victory.visible = true
-		print("You win!!!!!")
+
+func _display_victory():
+	$CanvasLayer/Victory.visible = true
+	print("You win!!!!!")
 
 
 func _unhandled_key_input(event):

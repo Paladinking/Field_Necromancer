@@ -66,6 +66,8 @@ type = 1
 
 [node name="Fighter" parent="Enemies" instance=ExtResource("2_c0wd3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.733, 0, -9.55116)
+is_mission_target = true
 
 [node name="Fighter2" parent="Enemies" instance=ExtResource("2_c0wd3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.733, 0, 14.0189)
+is_mission_target = true
