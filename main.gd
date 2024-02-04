@@ -53,4 +53,4 @@ func _display_victory():
 
 func _unhandled_key_input(event):
 	if event.keycode == KEY_ESCAPE:
-		get_tree().quit()
+		get_tree().change_scene_to_file("res:///MainMenu.tscn")
