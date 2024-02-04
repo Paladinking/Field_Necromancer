@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dt6ktmhcn2wdn"]
 
-[ext_resource type="PackedScene" uid="uid://cn1nj5nqnj6xr" path="res://Assets/Buildings/church_lofi.glb" id="1_38l1a"]
+[ext_resource type="PackedScene" uid="uid://c77i88tv4vyn1" path="res://Assets/Buildings/church.glb" id="1_tmeud"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7mttr"]
 size = Vector3(12, 4, 3.2)
@@ -34,4 +34,5 @@ shape = SubResource("BoxShape3D_37piv")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.95, 7, 0)
 shape = SubResource("ConvexPolygonShape3D_74yah")
 
-[node name="church_lofi" parent="." instance=ExtResource("1_38l1a")]
+[node name="church" parent="." instance=ExtResource("1_tmeud")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, 0, 0)

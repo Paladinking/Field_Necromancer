@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cplaonh0ihbnm"]
 
-[ext_resource type="PackedScene" uid="uid://db82duxqiwrgf" path="res://Assets/Buildings/hus_big_lofi.glb" id="1_mw6y6"]
+[ext_resource type="PackedScene" uid="uid://ccbubplr7dfoq" path="res://Assets/Buildings/hus_big.glb" id="1_p1k1e"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fuj5i"]
 size = Vector3(8, 4, 3.2)
@@ -18,8 +18,6 @@ points = PackedVector3Array(1.6, 0, -2.75, -1.6, 0, -2.75, 0, 3.1, -2.75, 0, 3.1
 collision_layer = 513
 collision_mask = 513
 
-[node name="hus_big_lofi" parent="." instance=ExtResource("1_mw6y6")]
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.275, 2, 0)
 shape = SubResource("BoxShape3D_fuj5i")
@@ -35,3 +33,6 @@ shape = SubResource("ConvexPolygonShape3D_p0u23")
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 4, 0)
 shape = SubResource("ConvexPolygonShape3D_x2ayf")
+
+[node name="hus_big" parent="." instance=ExtResource("1_p1k1e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0)
