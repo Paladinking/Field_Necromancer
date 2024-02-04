@@ -19,6 +19,10 @@ func _ready():
 			print("player died!")
 	)
 	$Player.position = $World/PlayerSpawn.position
+	$Player.on_death.connect(
+		func(_dir : Vector3):
+			$Timer.start()
+	)
 	var enemy_parent = $Enemies
 	enemy_targets = 0
 	for enemy in find_children("Fighter*"):
@@ -49,6 +53,10 @@ func _process(_delta):
 func _display_victory():
 	$CanvasLayer/Victory.visible = true
 	#print("You win!!!!!")
+
+
+func _go_to_main_menu():
+	get_tree().change_scene_to_file("res:///MainMenu.tscn")
 
 
 func _unhandled_key_input(event):

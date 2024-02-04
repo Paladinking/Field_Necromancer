@@ -50,3 +50,9 @@ theme_override_font_sizes/font_size = 200
 text = "You Won!!!"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_go_to_main_menu"]
