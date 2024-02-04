@@ -1,20 +1,34 @@
 extends Node
 
-const CAMERA_OFFSET = Vector3(0, 100, 42)
+const STATIC_CAMERA_OFFSET = Vector3(0, 100, 42)
+const MAX_LOOK_DISTANCE = 10.0
 
+var player_alive : bool = true
+var camera_offset : Vector3 = Vector3.ZERO
+var player_position : Vector3 = Vector3.ZERO
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_RESIZE_DISABLED, true)
-	$Grave.raise(0)
-	$Grave.creature_to_spawn = preload("res://Characters/zombie.tscn")
+	$Player.on_death.connect(
+		func(_dir : Vector3):
+			player_alive = false
+			print("player died!")
+	)
 	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	$Camera3D.position = $Player.position + CAMERA_OFFSET + $Player.camera_offset
+func _process(_delta):
+	if player_alive:
+		player_position = $Player.position
+
+	var look_dir = Input.get_vector("look_left", "look_right", "look_up", "look_down")
+	var target = Vector3(look_dir.x, 0, look_dir.y) * MAX_LOOK_DISTANCE
+	camera_offset += (target - camera_offset) / 15
+
+	$Camera3D.position = STATIC_CAMERA_OFFSET + camera_offset + player_position
 
 
 func _unhandled_key_input(event):

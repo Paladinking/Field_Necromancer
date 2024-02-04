@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://jlhkdovwdqe2"]
+[gd_scene load_steps=4 format=3 uid="uid://c1tdngfmy4lbk"]
 
 [ext_resource type="PackedScene" uid="uid://b53k7lqlxim5x" path="res://Assets/Buildings/hus_med_lofi.glb" id="1_ye260"]
 
@@ -9,6 +9,8 @@ size = Vector3(6, 4, 3.2)
 points = PackedVector3Array(-3, 0, -1.6, -3, 0, 1.6, -3, 2.4, 0, 3, 2.4, 0, 3, 0, 1.6, 3, 0, -1.6)
 
 [node name="House_med" type="StaticBody3D"]
+collision_layer = 513
+collision_mask = 513
 
 [node name="hus_med_lofi" parent="." instance=ExtResource("1_ye260")]
 

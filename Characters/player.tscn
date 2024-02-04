@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://40t17omux2gf"]
 
 [ext_resource type="Script" path="res://Characters/player.gd" id="1_daf4w"]
-[ext_resource type="PackedScene" uid="uid://c6gowm4jl1jd7" path="res://Assets/Characters/necromancer.glb" id="2_p0tns"]
+[ext_resource type="PackedScene" uid="uid://ccirag0503cku" path="res://Assets/Characters/necromancer.glb" id="2_p0tns"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_p7p8e"]
 
@@ -36,78 +36,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 shape = SubResource("CylinderShape3D_t31kh")
 
 [node name="necromancer" parent="." instance=ExtResource("2_p0tns")]
-
-[node name="Skeleton3D" parent="necromancer/Armature_004" index="1"]
-bones/1/rotation = Quaternion(0.0533657, 0.000798949, 0.00627098, 0.998555)
-bones/1/scale = Vector3(1, 1, 1)
-bones/3/rotation = Quaternion(-0.373552, 0.0370196, 0.00764396, 0.926839)
-bones/3/scale = Vector3(1, 1, 1)
-bones/4/rotation = Quaternion(0.0276091, -0.00318796, -0.00225008, 0.999611)
-bones/5/rotation = Quaternion(-0.156947, -0.0105326, 0.0392207, 0.986772)
-bones/6/rotation = Quaternion(-0.256952, -0.0858986, -0.282024, 0.920358)
-bones/6/scale = Vector3(1, 1, 1)
-bones/7/rotation = Quaternion(-0.337636, -0.619466, -0.284565, 0.649066)
-bones/7/scale = Vector3(1, 1, 1)
-bones/8/rotation = Quaternion(-0.373552, -0.0370196, -0.00764395, 0.926839)
-bones/9/rotation = Quaternion(0.027609, 0.00318795, 0.00225008, 0.999611)
-bones/11/rotation = Quaternion(-0.256952, 0.0858986, 0.282024, 0.920358)
-bones/11/scale = Vector3(1, 1, 1)
-bones/12/rotation = Quaternion(-0.0959148, -0.000288157, -0.0113206, 0.995325)
-bones/12/scale = Vector3(1, 1, 1)
-bones/13/rotation = Quaternion(-0.180623, -0.000330982, -0.0251784, 0.98323)
-bones/13/scale = Vector3(1, 1, 1)
-bones/14/rotation = Quaternion(-0.208592, -0.121895, 0.557537, 0.794219)
-bones/15/rotation = Quaternion(-0.207904, 0.0989068, -0.51293, 0.82698)
-bones/16/rotation = Quaternion(-0.496111, 0.502896, 0.522261, 0.477716)
-bones/17/rotation = Quaternion(-0.693627, 1.08683e-08, -1.03975e-09, 0.720335)
-bones/18/rotation = Quaternion(-0.0151774, 4.56437e-08, 0.0126425, 0.999805)
-bones/19/rotation = Quaternion(-0.0746688, -3.06459e-08, 0.0621973, 0.995267)
-bones/19/scale = Vector3(1, 1, 1)
-bones/20/rotation = Quaternion(0.140888, -0.0364214, 0.392037, 0.908367)
-bones/21/rotation = Quaternion(0.10523, -0.0466286, -0.773522, 0.623231)
-bones/22/rotation = Quaternion(-0.230492, -0.103977, 0.116342, 0.960483)
-bones/22/scale = Vector3(1, 1, 1)
-bones/23/rotation = Quaternion(0.496111, 0.502896, 0.522261, -0.477716)
-bones/24/rotation = Quaternion(-0.693627, -1.08683e-08, 1.03975e-09, 0.720335)
-bones/25/rotation = Quaternion(-0.0151774, -4.56437e-08, -0.0126425, 0.999805)
-bones/26/rotation = Quaternion(-0.0746688, 3.06459e-08, -0.0621973, 0.995267)
-bones/26/scale = Vector3(1, 1, 1)
-bones/27/rotation = Quaternion(0.140888, 0.0364214, -0.392037, 0.908367)
-bones/28/rotation = Quaternion(0.10523, 0.0466286, 0.773522, 0.623231)
-bones/29/rotation = Quaternion(-0.230492, 0.103977, -0.116342, 0.960483)
-bones/29/scale = Vector3(1, 1, 1)
-
-[node name="Armature" parent="necromancer" index="2"]
-transform = Transform3D(0.995839, 0.0121373, 0.0903173, -0.0157844, 0.999084, 0.0397766, -0.0897518, -0.0410367, 0.995118, 0.0548309, 2.56296, 0.777841)
-
-[node name="Skeleton3D" parent="necromancer/Armature" index="0"]
-bones/1/rotation = Quaternion(0.153327, -0.0843654, -0.232979, 0.956605)
-bones/1/scale = Vector3(1, 1, 1)
-bones/2/rotation = Quaternion(-0.194752, 0.0636693, 0.0221839, 0.978532)
-bones/2/scale = Vector3(1, 1, 1)
-bones/3/rotation = Quaternion(0.197415, 0.0179173, -0.0728809, 0.977443)
-bones/3/scale = Vector3(1, 1, 1)
-bones/4/rotation = Quaternion(-0.131577, -0.0656834, 0.0364414, 0.988456)
-bones/4/scale = Vector3(1, 1, 1)
-bones/5/rotation = Quaternion(-0.114368, -0.0363116, 0.041637, 0.991901)
-bones/5/scale = Vector3(1, 1, 1)
-bones/6/rotation = Quaternion(0.114114, -0.0398422, 0.197009, 0.972922)
-bones/7/rotation = Quaternion(-0.104991, -0.0029682, -0.0291771, 0.994041)
-bones/7/scale = Vector3(1, 1, 1)
-bones/8/rotation = Quaternion(0.0606328, 0.00926652, -0.0215023, 0.997885)
-bones/9/rotation = Quaternion(-0.048185, 0.00411263, 0.0291347, 0.998405)
-bones/9/scale = Vector3(1, 1, 1)
-bones/10/rotation = Quaternion(-0.0748589, -0.288506, -0.0364475, 0.953851)
-bones/10/scale = Vector3(1, 1, 1)
-bones/11/rotation = Quaternion(0.65806, -0.62949, -0.300026, -0.284049)
-bones/11/scale = Vector3(1, 1, 1)
-bones/12/rotation = Quaternion(0.658403, 0.629358, 0.299904, -0.283675)
-bones/13/rotation = Quaternion(0.963652, -0.193645, -0.104636, 0.151422)
-bones/14/rotation = Quaternion(0.965209, 0.187243, 0.0983207, 0.153771)
-bones/14/scale = Vector3(1, 1, 1)
-bones/15/rotation = Quaternion(-0.061138, 0.894378, 0.443085, 0.00515542)
-bones/15/scale = Vector3(1, 1, 1)
-
-[connection signal="body_entered" from="GraveDetectorArea" to="." method="on_grave_detected"]
-
-[editable path="necromancer"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 1, 0)

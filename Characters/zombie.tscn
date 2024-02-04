@@ -9,7 +9,7 @@ albedo_color = Color(1, 1, 0.219608, 1)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_437r7"]
 height = 10.0
-radius = 10.0
+radius = 6.0
 
 [node name="Zombie" type="CharacterBody3D"]
 collision_layer = 3
@@ -34,3 +34,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, 0)
 shape = SubResource("CylinderShape3D_437r7")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="AgressiveArea" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AgressiveArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, 0)
+shape = SubResource("CylinderShape3D_437r7")
