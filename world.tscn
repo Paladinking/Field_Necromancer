@@ -17,8 +17,9 @@ agent_radius = 0.8
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_kg43f"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aolv2"]
+vertex_color_use_as_albedo = true
 vertex_color_is_srgb = true
-albedo_color = Color(0.572549, 0.415686, 0.184314, 1)
+albedo_color = Color(0.482353, 0.733333, 0.309804, 1)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_gwobk"]
 plane = Plane(0, 0, 1, 0)
