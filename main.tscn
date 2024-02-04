@@ -55,8 +55,6 @@ vertical_alignment = 1
 wait_time = 3.0
 one_shot = true
 
-[connection signal="timeout" from="Timer" to="." method="_go_to_main_menu"]
-
 [node name="Lights" type="Node" parent="."]
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Lights"]
@@ -82,3 +80,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.89059, 5.18602, 2.1033)
 light_color = Color(1, 0.764706, 0.498039, 1)
 light_energy = 2.131
 light_size = 0.566
+
+[connection signal="timeout" from="Timer" to="." method="_go_to_main_menu"]
