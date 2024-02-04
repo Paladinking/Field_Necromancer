@@ -13,6 +13,8 @@ var _target : Entity = self
 @export var dmg: int
 var _attack_cooldown : float = ATTACK_COOLDWON
 
+var is_skeleton : bool = false
+
 var rng : RandomNumberGenerator = RandomNumberGenerator.new()
 
 const _grave = preload("res://Characters/grave.tscn")
@@ -52,7 +54,10 @@ func create_grave():
 	var grave = _grave.instantiate()
 	grave.position = Vector3(global_position.x, 0.0, global_position.z)
 	var parent = get_tree().get_nodes_in_group("Allies")[0]
-	grave.set_type(Grave.GraveType.Zombie)
+	if (self is Zombie):
+		grave.set_type(Grave.GraveType.Skeleton)
+	else:
+		grave.set_type(Grave.GraveType.Zombie)
 	parent.add_child(grave)	
 	queue_free()
 
@@ -104,6 +109,9 @@ func _ready() -> void:
 	)
 	
 func _fly_away(dir: Vector3):
+	if is_skeleton:
+		queue_free()
+		return
 	set_collision_mask_value(1, false)
 	set_collision_layer_value(2, false)
 	set_collision_layer_value(3, false)

@@ -15,6 +15,12 @@ func _ready():
 
 
 func _process(_delta):
+	if Input.is_action_just_pressed("attract") and $ZombieFollowArea.has_overlapping_bodies():
+		var zombies = $ZombieFollowArea.get_overlapping_bodies()
+		for zombie in zombies:
+			if zombie is Zombie:
+				zombie.set_following(self)
+	
 	if Input.is_action_just_pressed("dig") and $GraveDetectorArea.has_overlapping_bodies():
 		var graves = $GraveDetectorArea.get_overlapping_bodies()
 		var closest_grave = graves[0]
