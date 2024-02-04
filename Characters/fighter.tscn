@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://d1fc8ned6hc4e"]
+[gd_scene load_steps=6 format=3 uid="uid://d1fc8ned6hc4e"]
 
 [ext_resource type="Script" path="res://Characters/fighter.gd" id="1_pdd31"]
+[ext_resource type="PackedScene" uid="uid://bowgcudfexycp" path="res://Assets/Characters/enemy.glb" id="2_shxkk"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4ehho"]
 
@@ -23,6 +24,7 @@ shape = SubResource("CapsuleShape3D_4ehho")
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+visible = false
 material = SubResource("StandardMaterial3D_v1hkm")
 
 [node name="DetectionArea" type="Area3D" parent="."]
@@ -55,3 +57,6 @@ font_size = 100
 outline_size = 0
 horizontal_alignment = 0
 text_direction = 1
+
+[node name="model" parent="." instance=ExtResource("2_shxkk")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 1.2, 0)

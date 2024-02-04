@@ -2,7 +2,6 @@ class_name Zombie
 extends Fighter
 
 const FOLLOW_TIME : float = 5.0
-const WALKING_ANIMATION = "March"
 
 # Player or null
 var _following_time: float = 0.0
@@ -55,9 +54,3 @@ func _physics_process(delta: float):
 			_finalize_move(delta)
 		else:
 			super._physics_process(delta)
-
-		if not velocity.is_zero_approx() and _attack_cooldown <= 0:
-			$zombie/AnimationPlayer.play(WALKING_ANIMATION)
-			$zombie.rotation.y = atan2(velocity.x, velocity.z) + PI
-		elif $zombie/AnimationPlayer.assigned_animation == WALKING_ANIMATION and $zombie/AnimationPlayer.is_playing():
-			$zombie/AnimationPlayer.pause()

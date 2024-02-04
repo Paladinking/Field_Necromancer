@@ -3,6 +3,7 @@ extends Entity
 
 const SPEED: float = 2.5
 const ATTACK_COOLDWON : float = 1.2
+const WALKING_ANIMATION : String = "March"
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var _target : Entity = self
@@ -154,6 +155,7 @@ func _physics_process(delta: float):
 			_attack_cooldown = ATTACK_COOLDWON
 			var dir : Vector3 = (_target.position - position).normalized()
 			dir.y = 0
+			$model.rotation.y = atan2(dir.x, dir.z) + PI
 			_target._collision_acceleration = dir * 6
 			_collision_acceleration = -dir * 6
 			make_beep()
@@ -164,10 +166,15 @@ func _physics_process(delta: float):
 				self.damage(_target.dmg, -dir)
 				if _hp <= 0:
 					return
+				_target.get_node("model").rotation.y = atan2(dir.x, dir.z)
 				if _target is Zombie:
-					_target.find_child("*AnimationPlayer").play("Attack")
-				elif self is Zombie:
-					find_child("*AnimationPlayer").play("Attack")
+					_target.get_node("model/AnimationPlayer").play("Attack", -1, 1)
+				else:
+					_target.get_node("model/AnimationPlayer").play("Attack", -1, 4)
+				if self is Zombie:
+					$model/AnimationPlayer.play("Attack", -1, 1)
+				else:
+					$model/AnimationPlayer.play("Attack", -1, 4)
 		else:
 			if _nav_agent.is_navigation_finished() and dist < 5.0:
 				_nav_agent.set_target_position(_target.position)
@@ -192,3 +199,9 @@ func _physics_process(delta: float):
 		velocity = Vector3(0, 0, 0)
 	
 	_finalize_move(delta)
+
+	if not velocity.is_zero_approx() and _attack_cooldown <= 0:
+		$model/AnimationPlayer.play(WALKING_ANIMATION)
+		$model.rotation.y = atan2(velocity.x, velocity.z) + PI
+	elif $model/AnimationPlayer.assigned_animation == WALKING_ANIMATION and $model/AnimationPlayer.is_playing():
+		$model/AnimationPlayer.pause()

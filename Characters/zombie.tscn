@@ -49,27 +49,8 @@ collision_mask = 4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, 0)
 shape = SubResource("CylinderShape3D_437r7")
 
-[node name="zombie" parent="." instance=ExtResource("2_m8o0x")]
+[node name="model" parent="." instance=ExtResource("2_m8o0x")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 1.2, 0)
-
-[node name="Skeleton3D" parent="zombie/Armature_004" index="0"]
-bones/1/rotation = Quaternion(0.144295, 0.000223175, 0.00631772, 0.989515)
-bones/3/rotation = Quaternion(-0.761809, 0.187189, -0.304432, 0.540303)
-bones/6/position = Vector3(0.142261, 0.256487, -0.109124)
-bones/8/rotation = Quaternion(-0.285082, 0.518502, 0.383084, 0.709317)
-bones/9/rotation = Quaternion(0.0730252, -0.235235, 0.185776, 0.95122)
-bones/10/rotation = Quaternion(0.283069, 0.0568668, 0.0351467, 0.956767)
-bones/13/rotation = Quaternion(-0.0550188, 0.00405462, -0.024612, 0.998174)
-bones/17/rotation = Quaternion(-0.612355, -0.00836577, -0.00776962, 0.7905)
-bones/18/rotation = Quaternion(-0.0916335, 0.0019549, 0.0106071, 0.995734)
-bones/19/rotation = Quaternion(-0.0746688, -3.15816e-08, 0.0621973, 0.995267)
-bones/20/rotation = Quaternion(0.106874, -0.166587, 0.410169, 0.890274)
-bones/21/rotation = Quaternion(0.119019, -0.181472, -0.75427, 0.61966)
-bones/24/rotation = Quaternion(-0.636159, 0.00841897, -0.0119136, 0.77142)
-bones/25/rotation = Quaternion(-0.0586542, -0.00163467, -0.016174, 0.998146)
-bones/26/rotation = Quaternion(-0.0746688, 3.15816e-08, -0.0621973, 0.995267)
-bones/27/rotation = Quaternion(0.110241, 0.148594, -0.388767, 0.902567)
-bones/28/rotation = Quaternion(0.110057, 0.161683, 0.771108, 0.605919)
 
 [node name="FullHealth" type="Label3D" parent="."]
 transform = Transform3D(0.3, 0, 0, 0, 0.485725, 0.874112, 0, -0.874112, 0.485725, -1.35164, 3, 0)
@@ -91,5 +72,3 @@ font_size = 100
 outline_size = 0
 horizontal_alignment = 0
 text_direction = 1
-
-[editable path="zombie"]
