@@ -21,6 +21,7 @@ var rng : RandomNumberGenerator = RandomNumberGenerator.new()
 
 const _grave = preload("res://Characters/grave.tscn")
 
+
 func make_beep():
 	if !get_node_or_null("beep"):
 		var node = AudioStreamPlayer.new()
@@ -52,6 +53,7 @@ func make_beep():
 	
 	get_node("beep").play()
 
+
 func create_grave():
 	var grave = _grave.instantiate()
 	grave.position = Vector3(global_position.x, 0.0, global_position.z)
@@ -63,8 +65,10 @@ func create_grave():
 	parent.add_child(grave)	
 	queue_free()
 
+
 func has_target() -> bool:
 	return not is_same(self, _target)
+
 
 func find_target() -> void:
 	var potential_targets: Array[Node3D] = _detection.get_overlapping_bodies()\
@@ -81,8 +85,10 @@ func find_target() -> void:
 				dist = new_dist
 		set_target(nearest as Entity)
 
+
 func death(_dir: Vector3):
 	find_target()
+
 
 func clear_target():
 	if _target.on_death.is_connected(death):
@@ -90,6 +96,7 @@ func clear_target():
 	_target = self
 	# Cancel navigation
 	_nav_agent.set_target_position(position)
+
 
 func set_target(target: Entity):
 	if is_same(_target, target):
@@ -99,6 +106,7 @@ func set_target(target: Entity):
 	_target = target
 	_target.on_death.connect(death)
 	_nav_agent.set_target_position(_target.position)
+
 
 func _ready() -> void:
 	
@@ -112,6 +120,7 @@ func _ready() -> void:
 			if not has_target() or body.position.distance_squared_to(self.position) < _target.position.distance_squared_to(self.position):
 				set_target(body as Entity)
 	)
+
 	
 func _fly_away(dir: Vector3):
 	if is_skeleton:
@@ -125,6 +134,7 @@ func _fly_away(dir: Vector3):
 	set_collision_mask_value(10, true)
 	_collision_acceleration = Vector3(0, 0, 0)
 	velocity = Vector3(dir.x * 6.0, 4.9, dir.z * 6.0).rotated(Vector3(0.0, 1.0, 0.0), rng.randf_range(-PI / 8, PI / 8))
+
 
 func _physics_process(delta: float):
 	if _target == null:
@@ -154,6 +164,10 @@ func _physics_process(delta: float):
 				self.damage(_target.dmg, -dir)
 				if _hp <= 0:
 					return
+				if _target is Zombie:
+					_target.find_child("*AnimationPlayer").play("Attack")
+				elif self is Zombie:
+					find_child("*AnimationPlayer").play("Attack")
 		else:
 			if _nav_agent.is_navigation_finished() and dist < 5.0:
 				_nav_agent.set_target_position(_target.position)
@@ -177,7 +191,4 @@ func _physics_process(delta: float):
 	else:
 		velocity = Vector3(0, 0, 0)
 	
-		
 	_finalize_move(delta)
-	
-	

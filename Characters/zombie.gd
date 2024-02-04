@@ -2,6 +2,7 @@ class_name Zombie
 extends Fighter
 
 const FOLLOW_TIME : float = 5.0
+const WALKING_ANIMATION = "March"
 
 # Player or null
 var _following_time: float = 0.0
@@ -9,10 +10,13 @@ var _following: Node3D
 
 var _has_target_location : bool = false
 
+
+
 func set_target_location(pos: Vector3) -> void :
 	_nav_agent.set_target_position(pos)
 	_has_target_location = true
 	_following_time = FOLLOW_TIME
+
 
 func set_following(goal: Node3D) -> void:
 	if $AgressiveArea.has_overlapping_bodies():
@@ -23,14 +27,16 @@ func set_following(goal: Node3D) -> void:
 	_nav_agent.set_target_position(_following.position)
 	_has_target_location = false
 
+
 func _ready():
 	super._ready()
 	$AgressiveArea.body_entered.connect(
-		func(node : Node3D):
+		func(_node : Node3D):
 			_has_target_location = false
 			_following_time = 0.0
 			find_target()
 	)
+
 
 func _physics_process(delta: float):
 	if _following_time > 0.0:
@@ -43,6 +49,13 @@ func _physics_process(delta: float):
 			_nav_agent.set_target_position(_following.position)
 		var next_path_position: Vector3 = _nav_agent.get_next_path_position()
 		velocity = global_position.direction_to(next_path_position) * SPEED
+
 		_finalize_move(delta)
 	else:
 		super._physics_process(delta)
+
+	if not velocity.is_zero_approx() and _attack_cooldown <= 0:
+		$zombie/AnimationPlayer.play(WALKING_ANIMATION, -1, 1)
+		rotation.y = atan2(velocity.x, velocity.z) + PI
+	elif $zombie/AnimationPlayer.assigned_animation == WALKING_ANIMATION and $zombie/AnimationPlayer.is_playing():
+		$zombie/AnimationPlayer.pause()
