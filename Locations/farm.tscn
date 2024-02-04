@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dl732gpl788of"]
 
-[ext_resource type="PackedScene" uid="uid://jlhkdovwdqe2" path="res://Buildings/house_med.tscn" id="1_1fq07"]
-[ext_resource type="PackedScene" uid="uid://d2q8ytttpvmfs" path="res://Buildings/house_small.tscn" id="2_rldai"]
+[ext_resource type="PackedScene" uid="uid://c1tdngfmy4lbk" path="res://Buildings/house_med.tscn" id="1_1fq07"]
+[ext_resource type="PackedScene" uid="uid://bqadddckjkbme" path="res://Buildings/house_small.tscn" id="2_rldai"]
 [ext_resource type="PackedScene" uid="uid://cplaonh0ihbnm" path="res://Buildings/house_big.tscn" id="3_j3q1m"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4cguw"]

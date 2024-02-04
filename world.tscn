@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://cdvw0p45llw8x"]
 
 [ext_resource type="PackedScene" uid="uid://bojiwbfto8b8f" path="res://Locations/graveyard.tscn" id="1_xyknp"]
-[ext_resource type="PackedScene" uid="uid://bbg11uf2dpo1u" path="res://Locations/battlefield.tscn" id="2_prxim"]
+[ext_resource type="PackedScene" uid="uid://c7pc733uyfvms" path="res://Locations/battlefield.tscn" id="2_prxim"]
 [ext_resource type="PackedScene" uid="uid://dl732gpl788of" path="res://Locations/farm.tscn" id="3_uw5gi"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_ga0fh"]
@@ -33,6 +33,8 @@ size = Vector3(10, 2, 10)
 navigation_mesh = SubResource("NavigationMesh_ga0fh")
 
 [node name="WorldBounds" type="StaticBody3D" parent="."]
+collision_layer = 513
+collision_mask = 513
 
 [node name="FloorCollisionShape3D" type="CollisionShape3D" parent="WorldBounds"]
 shape = SubResource("WorldBoundaryShape3D_kg43f")
@@ -75,6 +77,8 @@ size = Vector3(150, 10, 1)
 
 [node name="Cube" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 31.0278)
+collision_layer = 513
+collision_mask = 513
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cube"]
 shape = SubResource("BoxShape3D_r3m3q")
