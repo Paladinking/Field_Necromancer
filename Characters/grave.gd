@@ -58,7 +58,6 @@ func spawn_character():
 
 	if not creature_to_spawn == null:
 		var creature : Zombie = creature_to_spawn.instantiate() as Zombie
-		#creature.process_mode = PROCESS_MODE_DISABLED
 		creature.raising = true
 		creature.set_collision_layer_value(1, false)
 		creature.position = Vector3(global_position.x, start_height, global_position.z)
@@ -71,6 +70,11 @@ func spawn_character():
 			creature._hp = creature._hp / 2
 			creature._max_hp = creature._hp
 			creature.dmg = creature.dmg / 2
-			var mat = creature.get_node("CSGCylinder3D").get_material().duplicate()
-			mat.albedo_color = Color(0.8,0.8,0.8)
-			creature.get_node("CSGCylinder3D").set_material(mat)
+			var old_model = creature.get_node("model")
+			old_model.name = "old_model"
+			old_model.queue_free()
+			var new_model = load("res://Assets/Characters/skeleton.glb").instantiate()
+			new_model.name = "model"
+			new_model.scale = Vector3(0.5, 0.5, 0.5)
+			new_model.position.y = 1.2
+			creature.add_child(new_model)

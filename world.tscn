@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cdvw0p45llw8x"]
+[gd_scene load_steps=14 format=3 uid="uid://cdvw0p45llw8x"]
 
 [ext_resource type="PackedScene" uid="uid://bojiwbfto8b8f" path="res://Locations/graveyard.tscn" id="1_xyknp"]
 [ext_resource type="PackedScene" uid="uid://c7pc733uyfvms" path="res://Locations/battlefield.tscn" id="2_prxim"]
@@ -14,6 +14,10 @@ geometry_source_geometry_mode = 1
 agent_radius = 0.8
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_kg43f"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aolv2"]
+vertex_color_is_srgb = true
+albedo_color = Color(0.572549, 0.415686, 0.184314, 1)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_gwobk"]
 plane = Plane(0, 0, 1, 0)
@@ -44,6 +48,7 @@ shape = SubResource("WorldBoundaryShape3D_kg43f")
 
 [node name="FloorCSGBox3D" type="CSGBox3D" parent="WorldBounds"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+material_override = SubResource("StandardMaterial3D_aolv2")
 size = Vector3(180, 0.2, 180)
 
 [node name="TopWallCollisionShape3D" type="CollisionShape3D" parent="WorldBounds"]
