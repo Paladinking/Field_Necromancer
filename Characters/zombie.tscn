@@ -53,21 +53,16 @@ shape = SubResource("CylinderShape3D_437r7")
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 1.2, 0)
 
 [node name="FullHealth" type="Label3D" parent="."]
-transform = Transform3D(0.3, 0, 0, 0, 0.485725, 0.874112, 0, -0.874112, 0.485725, -1.35164, 3, 0)
-visible = false
+transform = Transform3D(0.2, 0, 0, 0, 0.242862, 0.874112, 0, -0.437056, 0.485725, -0.910956, 3, 0)
 modulate = Color(0, 1, 0, 1)
-text = "████████████████████
-"
+text = "████████████████████"
 font_size = 100
 outline_size = 0
 horizontal_alignment = 0
 
 [node name="EmptyHealth" type="Label3D" parent="."]
-transform = Transform3D(-0.3, 0, 0, 0, 0.485725, 0.874112, 0, -0.874112, 0.485725, 1.45, 3, 0)
-visible = false
+transform = Transform3D(-0.2, 0, 0, 0, 0.242862, 0.874112, 0, -0.437056, 0.485725, 0.969114, 3, 0)
 modulate = Color(1, 0, 0, 1)
-text = "
-"
 font_size = 100
 outline_size = 0
 horizontal_alignment = 0
