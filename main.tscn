@@ -17,12 +17,13 @@ fov = 20.0
 visible = false
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.454282, -0.790493, -0.41079, 0.349938, -0.582395, 0.73373, -0.81925, 0.18957, 0.541195, 0, 0, 0)
+transform = Transform3D(-0.431479, -0.828444, -0.35708, 0.304184, -0.506248, 0.80696, -0.849292, 0.239568, 0.470435, 0, 0, 0)
 light_energy = 0.915
-light_indirect_energy = 3.586
+light_indirect_energy = 1.97
 light_volumetric_fog_energy = 0.677
 shadow_enabled = true
 shadow_opacity = 0.64
+directional_shadow_max_distance = 285.0
 
 [node name="Player" parent="." instance=ExtResource("1_q5uns")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70, 0, 0)

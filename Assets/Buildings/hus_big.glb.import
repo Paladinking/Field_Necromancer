@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cb2qqd438hnvo"
-path="res://.godot/imported/skeleton.glb-43f1da110a5ace29d3f7ab91e9677159.scn"
+uid="uid://ccbubplr7dfoq"
+path="res://.godot/imported/hus_big.glb-1ae58ce05ead2e296f0464364918fa23.scn"
 
 [deps]
 
-source_file="res://Assets/Characters/skeleton.glb"
-dest_files=["res://.godot/imported/skeleton.glb-43f1da110a5ace29d3f7ab91e9677159.scn"]
+source_file="res://Assets/Buildings/hus_big.glb"
+dest_files=["res://.godot/imported/hus_big.glb-1ae58ce05ead2e296f0464364918fa23.scn"]
 
 [params]
 
