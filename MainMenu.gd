@@ -12,10 +12,15 @@ func _ready():
 		
 	$MarginContainer/VBoxContainer/StartButton.button_down.connect(
 		func():
-			get_tree().change_scene_to_file("res://Main.tscn")
+			get_tree().change_scene_to_file("res://main.tscn")
 	)
 	
 	$MarginContainer/VBoxContainer/ExitButton.button_down.connect(
 		func():
 			get_tree().quit()
 	)
+
+
+func _process(_delta):
+	if Input.is_action_just_pressed("dig"):
+		get_tree().change_scene_to_file("res://main.tscn")
