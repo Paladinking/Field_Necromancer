@@ -155,26 +155,27 @@ func _physics_process(delta: float):
 			_attack_cooldown = ATTACK_COOLDWON
 			var dir : Vector3 = (_target.position - position).normalized()
 			dir.y = 0
-			$model.rotation.y = atan2(dir.x, dir.z) + PI
 			_target._collision_acceleration = dir * 6
 			_collision_acceleration = -dir * 6
 			make_beep()
 			_target.damage(self.dmg, dir)
+			$model.rotation.y = atan2(dir.x, dir.z) + PI
+			if self is Zombie:
+				$model/AnimationPlayer.play("Attack", -1, 1)
+			else:
+				$model/AnimationPlayer.play("Attack", -1, 4)
 			if _target is Fighter:
 				_target.find_target()
-				_target._attack_cooldown = ATTACK_COOLDWON
-				self.damage(_target.dmg, -dir)
+				if _target._attack_cooldown <= 0:
+					_target._attack_cooldown = ATTACK_COOLDWON
+					self.damage(_target.dmg, -dir)
+					_target.get_node("model").rotation.y = atan2(dir.x, dir.z)
+					if _target is Zombie:
+						_target.get_node("model/AnimationPlayer").play("Attack", -1, 1)
+					else:
+						_target.get_node("model/AnimationPlayer").play("Attack", -1, 4)
 				if _hp <= 0:
 					return
-				_target.get_node("model").rotation.y = atan2(dir.x, dir.z)
-				if _target is Zombie:
-					_target.get_node("model/AnimationPlayer").play("Attack", -1, 1)
-				else:
-					_target.get_node("model/AnimationPlayer").play("Attack", -1, 4)
-				if self is Zombie:
-					$model/AnimationPlayer.play("Attack", -1, 1)
-				else:
-					$model/AnimationPlayer.play("Attack", -1, 4)
 		else:
 			if _nav_agent.is_navigation_finished() and dist < 5.0:
 				_nav_agent.set_target_position(_target.position)
