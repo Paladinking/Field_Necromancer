@@ -11,7 +11,7 @@ func _ready():
 			queue_free()
 			#get_tree().quit()
 	)
-	$necromancer/AnimationPlayer.play(WALK_ANIMATION)
+	$necromancer/AnimationPlayer.play(WALK_ANIMATION, -1, 2.0)
 
 
 func _process(_delta):
@@ -37,7 +37,7 @@ func _physics_process(delta):
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
 		$necromancer.rotation.y = atan2(direction.x, direction.z) + PI
-		$necromancer/AnimationPlayer.play(WALK_ANIMATION)
+		$necromancer/AnimationPlayer.play(WALK_ANIMATION, -1, 2.0)
 	else:
 		$necromancer/AnimationPlayer.pause()
 		velocity.x = move_toward(velocity.x, 0, SPEED)
