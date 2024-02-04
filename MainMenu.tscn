@@ -1,0 +1,45 @@
+[gd_scene load_steps=2 format=3 uid="uid://dbgtelpahvrqi"]
+
+[ext_resource type="Script" path="res://MainMenu.gd" id="1_sgo51"]
+
+[node name="MainMenu" type="Node"]
+script = ExtResource("1_sgo51")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Logo" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "Field Necromancer"
+horizontal_alignment = 1
+
+[node name="StartButton" type="MenuButton" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.701961, 0.701961, 0.701961, 1)
+theme_override_font_sizes/font_size = 100
+text = "Start"
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="ExitButton" type="MenuButton" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.701961, 0.701961, 0.701961, 1)
+theme_override_font_sizes/font_size = 100
+text = "Exit"
