@@ -12,6 +12,21 @@ func damage(dmg: int, dir: Vector3):
 	if _hp <= 0:
 		return
 	_hp -= dmg
+	
+	if self is Fighter:
+		$FullHealth.visible = true
+		$EmptyHealth.visible = true
+		var ratio = float(_hp) / float(self._max_hp)
+		var full = int(20 * ratio)
+		var empty = 20 - full
+		if (full > 0):
+			$FullHealth.set_text("█".repeat(full))
+		else:
+			$FullHealth.set_text("")
+		if (empty > 0):
+			$EmptyHealth.set_text("█".repeat(empty))
+		else:
+			$EmptyHealth.set_text("")
 	if _hp <= 0:
 		on_death.emit(dir)
 

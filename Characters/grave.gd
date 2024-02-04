@@ -31,10 +31,12 @@ func _physics_process(delta):
 			position.y = target_height
 
 			if $CreatureHolder.get_child_count() > 0:
-				var child = $CreatureHolder.get_child(0)
+				var child = $CreatureHolder.get_child(0) as Zombie
 				child.process_mode = PROCESS_MODE_INHERIT
 				var parent = get_tree().get_nodes_in_group("Allies")[0]
 				child.reparent(parent)
+				child.raising = false
+				child.set_collision_layer_value(1, true)
 
 				queue_free()
 
@@ -55,14 +57,20 @@ func spawn_character():
 		creature_to_spawn = preload("res://Characters/zombie.tscn")
 
 	if not creature_to_spawn == null:
-		var creature = creature_to_spawn.instantiate()
-		creature.process_mode = PROCESS_MODE_DISABLED
+		var creature : Zombie = creature_to_spawn.instantiate() as Zombie
+		#creature.process_mode = PROCESS_MODE_DISABLED
+		creature.raising = true
+		creature.set_collision_layer_value(1, false)
 		creature.position = Vector3(global_position.x, start_height, global_position.z)
 		$CreatureHolder.add_child(creature)
+		creature.find_child("*AnimationPlayer").play("March")
 		target_height = start_height
 		velocity = -RAISE_VELOCITY
 		if type == GraveType.Skeleton:
 			creature.is_skeleton = true
 			creature._hp = creature._hp / 2
+			creature._max_hp = creature._hp
 			creature.dmg = creature.dmg / 2
-			creature.get_node("CSGCylinder3D").get_material().albedo_color = Color(0.8,0.8,0.8)
+			var mat = creature.get_node("CSGCylinder3D").get_material().duplicate()
+			mat.albedo_color = Color(0.8,0.8,0.8)
+			creature.get_node("CSGCylinder3D").set_material(mat)

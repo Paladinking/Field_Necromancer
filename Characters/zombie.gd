@@ -10,6 +10,7 @@ var _following: Node3D
 
 var _has_target_location : bool = false
 
+var raising : bool = true
 
 
 func set_target_location(pos: Vector3) -> void :
@@ -39,23 +40,24 @@ func _ready():
 
 
 func _physics_process(delta: float):
-	if _following_time > 0.0:
-		_following_time -= delta
-		if _has_target_location:
-			if _nav_agent.is_navigation_finished():
-				_has_target_location = false
-				_following_time = 0.0
-		elif _following.position.distance_squared_to(_nav_agent.get_target_position()) > 2.0:
-			_nav_agent.set_target_position(_following.position)
-		var next_path_position: Vector3 = _nav_agent.get_next_path_position()
-		velocity = global_position.direction_to(next_path_position) * SPEED
+	if not raising:
+		if _following_time > 0.0:
+			_following_time -= delta
+			if _has_target_location:
+				if _nav_agent.is_navigation_finished():
+					_has_target_location = false
+					_following_time = 0.0
+			elif _following.position.distance_squared_to(_nav_agent.get_target_position()) > 2.0:
+				_nav_agent.set_target_position(_following.position)
+			var next_path_position: Vector3 = _nav_agent.get_next_path_position()
+			velocity = global_position.direction_to(next_path_position) * SPEED
 
-		_finalize_move(delta)
-	else:
-		super._physics_process(delta)
+			_finalize_move(delta)
+		else:
+			super._physics_process(delta)
 
-	if not velocity.is_zero_approx() and _attack_cooldown <= 0:
-		$zombie/AnimationPlayer.play(WALKING_ANIMATION, -1, 1)
-		rotation.y = atan2(velocity.x, velocity.z) + PI
-	elif $zombie/AnimationPlayer.assigned_animation == WALKING_ANIMATION and $zombie/AnimationPlayer.is_playing():
-		$zombie/AnimationPlayer.pause()
+		if not velocity.is_zero_approx() and _attack_cooldown <= 0:
+			$zombie/AnimationPlayer.play(WALKING_ANIMATION)
+			$zombie.rotation.y = atan2(velocity.x, velocity.z) + PI
+		elif $zombie/AnimationPlayer.assigned_animation == WALKING_ANIMATION and $zombie/AnimationPlayer.is_playing():
+			$zombie/AnimationPlayer.pause()
