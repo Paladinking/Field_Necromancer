@@ -59,7 +59,7 @@ func create_grave():
 func has_target() -> bool:
 	return not is_same(self, _target)
 
-func find_target():
+func find_target() -> void:
 	var potential_targets: Array[Node3D] = _detection.get_overlapping_bodies()\
 		.filter(func(e: Node3D): return e is Entity and e._hp > 0)
 	if not potential_targets:
@@ -114,8 +114,6 @@ func _fly_away(dir: Vector3):
 	velocity = Vector3(dir.x * 6.0, 4.9, dir.z * 6.0).rotated(Vector3(0.0, 1.0, 0.0), rng.randf_range(-PI / 8, PI / 8))
 
 func _physics_process(delta: float):
-	if _collision_acceleration.length() > 5.0:
-		print(self, _collision_acceleration, _collision_acceleration.length())
 	if _target == null:
 		return
 	if _hp <= 0:
@@ -146,7 +144,7 @@ func _physics_process(delta: float):
 		else:
 			if _nav_agent.is_navigation_finished() and dist < 5.0:
 				_nav_agent.set_target_position(_target.position)
-			if _target.position.distance_squared_to(position) > 200:
+			if _target.position.distance_squared_to(position) > 100:
 				find_target()
 		if _target.position.distance_squared_to(_nav_agent.get_target_position()) > 2.0:
 			_nav_agent.set_target_position(_target.position)
