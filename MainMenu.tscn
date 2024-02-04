@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dbgtelpahvrqi"]
+[gd_scene load_steps=3 format=3 uid="uid://dbgtelpahvrqi"]
 
 [ext_resource type="Script" path="res://MainMenu.gd" id="1_sgo51"]
+[ext_resource type="PackedScene" uid="uid://d1nyiktechy1p" path="res://menu_world.tscn" id="2_rdgy4"]
 
 [node name="MainMenu" type="Node"]
 script = ExtResource("1_sgo51")
@@ -43,3 +44,20 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.701961, 0.701961, 0.701961, 1)
 theme_override_font_sizes/font_size = 100
 text = "Exit"
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="World" parent="Node3D" instance=ExtResource("2_rdgy4")]
+
+[node name="Camera3D2" type="Camera3D" parent="Node3D"]
+transform = Transform3D(-0.648342, 0.523763, -0.552563, -0.0445189, 0.698445, 0.714278, 0.760047, 0.487695, -0.429514, -35.8434, 24.1122, 0)
+visible = false
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Node3D"]
+transform = Transform3D(-0.431479, -0.828444, -0.35708, 0.304184, -0.506248, 0.80696, -0.849292, 0.239568, 0.470435, 0, 7, 0)
+light_energy = 0.915
+light_indirect_energy = 1.97
+light_volumetric_fog_energy = 0.677
+shadow_enabled = true
+shadow_opacity = 0.64
+directional_shadow_max_distance = 285.0
