@@ -3,8 +3,10 @@ extends Entity
 
 const SPEED = 10.0
 const MAX_LOOK_DISTANCE = 10.0
+const WALK_ANIMATION = "Animation"
 
 var camera_offset = Vector3.ZERO
+
 
 func _ready():
 	on_death.connect(
@@ -12,6 +14,10 @@ func _ready():
 			queue_free()
 			get_tree().quit()
 	)
+	$necromancer/AnimationPlayer.play(WALK_ANIMATION)
+	$necromancer/AnimationPlayer.pause()
+
+
 func _process(_delta):
 	if Input.is_action_just_pressed("dig") and $GraveDetectorArea.has_overlapping_bodies():
 		var graves = $GraveDetectorArea.get_overlapping_bodies()
@@ -21,7 +27,7 @@ func _process(_delta):
 				closest_grave = grave
 		closest_grave.spawn_character()
 	#camera_offset = camera_offset.clamp(target, target)
-	
+
 
 func _physics_process(delta):
 	var input_dir = Input.get_vector("go_left", "go_right", "go_up", "go_down")
@@ -29,7 +35,10 @@ func _physics_process(delta):
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
+		$necromancer.rotation.y = atan2(direction.x, direction.z) + PI
+		$necromancer/AnimationPlayer.play(WALK_ANIMATION)
 	else:
+		$necromancer/AnimationPlayer.pause()
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
