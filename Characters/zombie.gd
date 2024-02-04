@@ -51,7 +51,7 @@ func _physics_process(delta: float):
 				_nav_agent.set_target_position(_following.position)
 			var next_path_position: Vector3 = _nav_agent.get_next_path_position()
 			velocity = global_position.direction_to(next_path_position) * SPEED
-
+			_attack_cooldown -= delta
 			_finalize_move(delta)
 		else:
 			super._physics_process(delta)
