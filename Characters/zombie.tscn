@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://ffk16i63c45l"]
+[gd_scene load_steps=6 format=3 uid="uid://ffk16i63c45l"]
 
 [ext_resource type="Script" path="res://Characters/zombie.gd" id="1_2i0eo"]
 
@@ -7,15 +7,19 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6ljny"]
 albedo_color = Color(1, 1, 0.219608, 1)
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_75k7f"]
+height = 10.0
+radius = 20.0
+
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_437r7"]
 height = 10.0
-radius = 6.0
+radius = 4.0
 
 [node name="Zombie" type="CharacterBody3D"]
 collision_layer = 3
 script = ExtResource("1_2i0eo")
 dmg = 2
-_hp = 18
+_hp = 20
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -31,7 +35,7 @@ collision_mask = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DetectionArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, 0)
-shape = SubResource("CylinderShape3D_437r7")
+shape = SubResource("CylinderShape3D_75k7f")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 

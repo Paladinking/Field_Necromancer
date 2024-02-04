@@ -10,6 +10,7 @@ var start_height : float
 
 var creature_to_spawn
 
+var type : GraveType = GraveType.Zombie
 
 func _ready():
 	velocity = 0.0
@@ -44,17 +45,12 @@ func raise(ground_height : float = 0.0):
 
 enum GraveType {Zombie, Skeleton}
 
-func set_type(type : GraveType = GraveType.Zombie):
-	match type:
-		GraveType.Zombie:
-			creature_to_spawn = preload("res://Characters/zombie.tscn")
-		GraveType.Skeleton:
-			print("not implemented yet")
-			#creature_to_spawn = preload("res://Characters/skeleton.tscn")
+func set_type(_type : GraveType = GraveType.Zombie):
+	creature_to_spawn = preload("res://Characters/zombie.tscn")
+	self.type = _type
 
 
 func spawn_character():
-	#print("spawning thing from grave!")
 	if creature_to_spawn == null:
 		creature_to_spawn = preload("res://Characters/zombie.tscn")
 
@@ -65,3 +61,8 @@ func spawn_character():
 		$CreatureHolder.add_child(creature)
 		target_height = start_height
 		velocity = -RAISE_VELOCITY
+		if type == GraveType.Skeleton:
+			creature.is_skeleton = true
+			creature._hp = creature._hp / 2
+			creature.dmg = creature.dmg / 2
+			creature.get_node("CSGCylinder3D").get_material().albedo_color = Color(0.8,0.8,0.8)

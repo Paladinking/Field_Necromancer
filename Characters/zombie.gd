@@ -1,3 +1,4 @@
+class_name Zombie
 extends Fighter
 
 const FOLLOW_TIME : float = 5.0
@@ -8,12 +9,15 @@ var _following: Node3D
 
 var _has_target_location : bool = false
 
-func set_target_location(pos: Vector3):
+func set_target_location(pos: Vector3) -> void :
 	_nav_agent.set_target_position(pos)
 	_has_target_location = true
 	_following_time = FOLLOW_TIME
 
-func set_following(goal: Node3D):
+func set_following(goal: Node3D) -> void:
+	if $AgressiveArea.has_overlapping_bodies():
+		find_target()
+		return
 	_following = goal
 	_following_time = FOLLOW_TIME
 	_nav_agent.set_target_position(_following.position)
