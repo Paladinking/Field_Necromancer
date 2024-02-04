@@ -10,6 +10,7 @@ size = Vector3(1, 0.3, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0)
 collision_layer = 8
 collision_mask = 0
+sync_to_physics = false
 script = ExtResource("1_muvio")
 
 [node name="CreatureHolder" type="Node" parent="."]
