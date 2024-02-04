@@ -16,7 +16,7 @@ func _ready():
 			player_alive = false
 			print("player died!")
 	)
-	
+	$Player.position = $World/PlayerSpawn.position
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
