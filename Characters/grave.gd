@@ -9,6 +9,7 @@ var start_height : float
 
 var creature_to_spawn
 
+@export
 var type : GraveType = GraveType.Zombie
 
 func _ready():
