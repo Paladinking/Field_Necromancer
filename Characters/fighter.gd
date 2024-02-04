@@ -13,6 +13,8 @@ var _target : Entity = self
 @export var dmg: int
 var _attack_cooldown : float = ATTACK_COOLDWON
 
+@onready var _max_hp : int = _hp
+
 var is_skeleton : bool = false
 
 var rng : RandomNumberGenerator = RandomNumberGenerator.new()
@@ -99,7 +101,10 @@ func set_target(target: Entity):
 	_nav_agent.set_target_position(_target.position)
 
 func _ready() -> void:
+	
 	assert(not _nav_agent.avoidance_enabled, "Avoidance requires velocity_computed callback")
+	$FullHealth.visible = false
+	$EmptyHealth.visible = false
 	on_death.connect(_fly_away)
 	_detection.body_entered.connect(
 		func(body: Node3D):

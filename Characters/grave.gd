@@ -64,5 +64,8 @@ func spawn_character():
 		if type == GraveType.Skeleton:
 			creature.is_skeleton = true
 			creature._hp = creature._hp / 2
+			creature._max_hp = creature._hp
 			creature.dmg = creature.dmg / 2
-			creature.get_node("CSGCylinder3D").get_material().albedo_color = Color(0.8,0.8,0.8)
+			var mat = creature.get_node("CSGCylinder3D").get_material().duplicate()
+			mat.albedo_color = Color(0.8,0.8,0.8)
+			creature.get_node("CSGCylinder3D").set_material(mat)
