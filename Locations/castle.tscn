@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cyxnk07pigw13"]
+[gd_scene load_steps=7 format=3 uid="uid://cyxnk07pigw13"]
 
 [ext_resource type="PackedScene" uid="uid://dt6ktmhcn2wdn" path="res://Buildings/church.tscn" id="1_55bar"]
 [ext_resource type="PackedScene" uid="uid://cplaonh0ihbnm" path="res://Buildings/house_big.tscn" id="2_w8prn"]
 [ext_resource type="PackedScene" uid="uid://jlhkdovwdqe2" path="res://Buildings/house_med.tscn" id="3_5q75x"]
 [ext_resource type="PackedScene" uid="uid://d2q8ytttpvmfs" path="res://Buildings/house_small.tscn" id="4_w32iq"]
 [ext_resource type="PackedScene" uid="uid://da7futuxwh1lo" path="res://Buildings/wall.tscn" id="5_w2mqb"]
+[ext_resource type="PackedScene" uid="uid://d1fc8ned6hc4e" path="res://Characters/fighter.tscn" id="6_8np6c"]
 
 [node name="Castle" type="Node3D"]
 
@@ -121,3 +122,50 @@ transform = Transform3D(-5.24537e-08, 0, -1.2, 0, 1.2, 0, 1.2, 0, -5.24537e-08, 
 
 [node name="Wall8" parent="." instance=ExtResource("5_w2mqb")]
 transform = Transform3D(-1.2, 0, 1.81195e-07, 0, 1.2, 0, -1.81195e-07, 0, -1.2, -20, 0, 21)
+
+[node name="Enemies" type="Node3D" parent="."]
+
+[node name="Fighter" parent="Enemies" instance=ExtResource("6_8np6c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 0, 0)
+
+[node name="Fighter2" parent="Enemies" instance=ExtResource("6_8np6c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, 0)
+
+[node name="Fighter3" parent="Enemies" instance=ExtResource("6_8np6c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 0, -9)
+
+[node name="Fighter4" parent="Enemies" instance=ExtResource("6_8np6c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 0, 13)
+
+[node name="Fighter5" parent="Enemies" instance=ExtResource("6_8np6c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, 18)
+
+[node name="Fighter6" parent="Enemies" instance=ExtResource("6_8np6c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 5)
+
+[node name="Fighter7" parent="Enemies" instance=ExtResource("6_8np6c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -14)
+
+[node name="Fighter8" parent="Enemies" instance=ExtResource("6_8np6c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7)
+
+[node name="Fighter9" parent="Enemies" instance=ExtResource("6_8np6c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 16)
+
+[node name="Fighter10" parent="Enemies" instance=ExtResource("6_8np6c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -4)
+
+[node name="Fighter11" parent="Enemies" instance=ExtResource("6_8np6c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 0)
+
+[node name="Fighter12" parent="Enemies" instance=ExtResource("6_8np6c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 17)
+
+[node name="Fighter13" parent="Enemies" instance=ExtResource("6_8np6c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 14)
+
+[node name="Fighter14" parent="Enemies" instance=ExtResource("6_8np6c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, -14)
+
+[node name="Fighter15" parent="Enemies" instance=ExtResource("6_8np6c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20)

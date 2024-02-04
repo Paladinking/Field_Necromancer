@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bojiwbfto8b8f"]
+[gd_scene load_steps=5 format=3 uid="uid://bojiwbfto8b8f"]
 
 [ext_resource type="PackedScene" uid="uid://dt6ktmhcn2wdn" path="res://Buildings/church.tscn" id="1_cp6xr"]
 [ext_resource type="PackedScene" uid="uid://7jfew48rxs6p" path="res://Characters/grave.tscn" id="2_2u7ao"]
 [ext_resource type="PackedScene" uid="uid://da7futuxwh1lo" path="res://Buildings/wall.tscn" id="2_s5wms"]
+[ext_resource type="PackedScene" uid="uid://d1fc8ned6hc4e" path="res://Characters/fighter.tscn" id="4_n6dqt"]
 
 [node name="Graveyard" type="Node3D"]
 
@@ -66,3 +67,20 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7, 0,
 
 [node name="Grave12" parent="Graves" instance=ExtResource("2_2u7ao")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7, 0, -6)
+
+[node name="Enemies" type="Node3D" parent="."]
+
+[node name="Fighter" parent="Enemies" instance=ExtResource("4_n6dqt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 0)
+
+[node name="Fighter2" parent="Enemies" instance=ExtResource("4_n6dqt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 1)
+
+[node name="Fighter3" parent="Enemies" instance=ExtResource("4_n6dqt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
+
+[node name="Fighter4" parent="Enemies" instance=ExtResource("4_n6dqt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -10)
+
+[node name="Fighter5" parent="Enemies" instance=ExtResource("4_n6dqt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 10)

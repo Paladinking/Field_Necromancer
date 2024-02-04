@@ -17,6 +17,10 @@ func _ready():
 			print("player died!")
 	)
 	$Player.position = $World/PlayerSpawn.position
+	var enemy_parent = $Enemies
+	for enemy in find_children("Fighter*"):
+		if enemy.get_parent() != enemy_parent:
+			enemy.reparent(enemy_parent)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

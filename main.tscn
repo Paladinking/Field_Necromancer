@@ -32,24 +32,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70, 0, 0)
 [node name="Enemies" type="Node" parent="." groups=["Enemies"]]
 
 [node name="Fighter" parent="Enemies" instance=ExtResource("5_k65jl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.27348, 0, -5.58719)
-
-[node name="Fighter2" parent="Enemies" instance=ExtResource("5_k65jl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 39.349)
-
-[node name="Fighter3" parent="Enemies" instance=ExtResource("5_k65jl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.26171, 0.508638, -32.7366)
-
-[node name="Fighter4" parent="Enemies" instance=ExtResource("5_k65jl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.63188, 1.09802, 12.4247)
-
-[node name="Fighter5" parent="Enemies" instance=ExtResource("5_k65jl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.69229, 0.508638, 11.3745)
-
-[node name="Fighter6" parent="Enemies" instance=ExtResource("5_k65jl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.1242, 0.508638, 11.3745)
-
-[node name="Fighter7" parent="Enemies" instance=ExtResource("5_k65jl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.8031, 0.508638, 11.3745)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.3301, 0, -0.897903)
 
 [node name="Allies" type="Node" parent="." groups=["Allies"]]

@@ -1,7 +1,6 @@
 class_name Grave
 extends AnimatableBody3D
 
-
 const RAISE_VELOCITY = 5
 
 var velocity : float

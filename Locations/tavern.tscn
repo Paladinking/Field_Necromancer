@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://dxff4i34xhsx3"]
+
+[ext_resource type="PackedScene" uid="uid://jlhkdovwdqe2" path="res://Buildings/house_med.tscn" id="1_1gsj0"]
+[ext_resource type="PackedScene" uid="uid://d2q8ytttpvmfs" path="res://Buildings/house_small.tscn" id="2_a6lwj"]
+[ext_resource type="PackedScene" uid="uid://da7futuxwh1lo" path="res://Buildings/wall.tscn" id="3_4xskk"]
+[ext_resource type="PackedScene" uid="uid://d1fc8ned6hc4e" path="res://Characters/fighter.tscn" id="4_ar07a"]
+
+[node name="Tavern" type="Node3D"]
+
+[node name="House_med" parent="." instance=ExtResource("1_1gsj0")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 4, -2, 22.4977)
+
+[node name="House_med2" parent="." instance=ExtResource("1_1gsj0")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -4, -2, 22.4977)
+
+[node name="House_med3" parent="." instance=ExtResource("1_1gsj0")]
+transform = Transform3D(-6.55671e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.55671e-08, -16, -2, -1)
+
+[node name="House_small" parent="." instance=ExtResource("2_a6lwj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 22.4977)
+
+[node name="House_small2" parent="." instance=ExtResource("2_a6lwj")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -16, 0, 6)
+
+[node name="Wall" parent="." instance=ExtResource("3_4xskk")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4, 0, -16.3942)
+
+[node name="Wall2" parent="." instance=ExtResource("3_4xskk")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2, 0, -16.3942)
+
+[node name="Wall3" parent="." instance=ExtResource("3_4xskk")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8, 0, -16.3942)
+
+[node name="House_med4" parent="." instance=ExtResource("1_1gsj0")]
+transform = Transform3D(-6.55671e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.55671e-08, 21, -2, 3)
+
+[node name="Enemies" type="Node3D" parent="."]
+
+[node name="Fighter" parent="Enemies" instance=ExtResource("4_ar07a")]
+
+[node name="Fighter2" parent="Enemies" instance=ExtResource("4_ar07a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0)
+
+[node name="Fighter3" parent="Enemies" instance=ExtResource("4_ar07a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
+
+[node name="Fighter4" parent="Enemies" instance=ExtResource("4_ar07a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7)
+
+[node name="Fighter5" parent="Enemies" instance=ExtResource("4_ar07a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 7)

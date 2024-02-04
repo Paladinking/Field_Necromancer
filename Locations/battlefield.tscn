@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c7pc733uyfvms"]
+[gd_scene load_steps=3 format=3 uid="uid://c7pc733uyfvms"]
 
 [ext_resource type="PackedScene" uid="uid://7jfew48rxs6p" path="res://Characters/grave.tscn" id="1_riuki"]
+[ext_resource type="PackedScene" uid="uid://d1fc8ned6hc4e" path="res://Characters/fighter.tscn" id="2_c0wd3"]
 
 [node name="Battlefield" type="Node3D"]
 
@@ -48,3 +49,11 @@ transform = Transform3D(0.790999, 0, 0.611817, 0, 1, 0, -0.611817, 0, 0.790999, 
 
 [node name="Grave17" parent="." instance=ExtResource("1_riuki")]
 transform = Transform3D(0.490472, -0.0913104, 0.86666, 0.0449731, 0.995822, 0.0794671, -0.870296, 0, 0.49253, 14.2494, 0, 10.1985)
+
+[node name="Enemies" type="Node3D" parent="."]
+
+[node name="Fighter" parent="Enemies" instance=ExtResource("2_c0wd3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.733, 0, -9.55116)
+
+[node name="Fighter2" parent="Enemies" instance=ExtResource("2_c0wd3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.733, 0, 14.0189)
